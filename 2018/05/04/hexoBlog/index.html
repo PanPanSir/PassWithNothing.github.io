@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-04T14:26:43.000Z">
+<meta property="og:updated_time" content="2018-05-04T14:28:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexoBlog">
 <meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
@@ -88,16 +88,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a></p>
-<p>###问题一<br>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
 <p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
 <p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
 <p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>###问题二<br>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/04/hexoBlog/" data-id="cjgs15chd00018ys6gkvg9feq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/04/hexoBlog/" data-id="cjgs20we500008is6oh6rzp1d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo博客搭建备忘/">hexo博客搭建备忘</a></li></ul>
@@ -106,16 +106,6 @@
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2018/05/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -163,10 +153,6 @@
         
           <li>
             <a href="/2018/05/04/hexoBlog/">hexoBlog</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
