@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具使用," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
-<meta name="keywords" content="工具使用">
+<meta name="description" content="学习使用React有一段时间了，在空闲时间想再回顾一遍官方文档，希望温故知新^~^*">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexoBlog">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/hexoBlog/index.html">
+<meta property="og:title" content="React 一">
+<meta property="og:url" content="http://yoursite.com/2018/05/07/React/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta property="og:description" content="学习使用React有一段时间了，在空闲时间想再回顾一遍官方文档，希望温故知新^~^*">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-07T02:58:26.000Z">
+<meta property="og:updated_time" content="2018-05-07T03:46:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexoBlog">
-<meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="twitter:title" content="React 一">
+<meta name="twitter:description" content="学习使用React有一段时间了，在空闲时间想再回顾一遍官方文档，希望温故知新^~^*">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/hexoBlog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/07/React/"/>
 
 
 
 
 
-  <title>hexoBlog | Hexo</title>
+  <title>React 一 | Hexo</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/hexoBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/React/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexoBlog</h1>
+          <h1 class="post-title" itemprop="name headline">React 一</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T22:02:54+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T11:07:04+08:00">
+                2018-05-07
               </time>
             
 
@@ -272,6 +271,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -300,12 +321,22 @@
       
 
       
-        <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a></p>
-<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
-<p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
-<p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+        <p>学习使用React有一段时间了，在空闲时间想再回顾一遍官方文档，希望温故知新^~^* <a id="more"></a>  </p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p><strong>JSX是什么</strong></p>
+<p>JSX并不是字符串或者HTML，它是JavaScript的一种符号扩展。另外，JSX也是一种表达式，其执行结果是React Component，其本质是JavaScript object。<br>JSX经过babel编译时通过执行React.createElement()生成React Component对象，其过程大致如下：<br>正式由于所有JSX在babel编译时必须调用React.createElement()，因此React库必须存在在你的作用域中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const ele = &lt;&apos;span className=&quot;normalText&quot;&gt;hello, beauty!&lt;/span&gt;; // JSX</span><br><span class="line">等价于</span><br><span class="line">const ele = React.createElement(</span><br><span class="line">  &apos;span&apos;,</span><br><span class="line">  className: &apos;normalText&apos;,</span><br><span class="line">  &apos;hello, beauty!&apos;,</span><br><span class="line">);</span><br><span class="line">babel编译后的JavaScript object</span><br><span class="line">const ele = &#123;</span><br><span class="line">  type: &apos;span&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: &apos;normalText&apos;,</span><br><span class="line">    children: &apos;hello, beauty!&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>因此，我们可以将JSX作为参数传递给函数，也可将其作为函数返回结果，并可将之赋值给变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">      function sayHello(name) &#123;</span><br><span class="line">        return (&lt;&apos;div&gt; hello, &#123;name&#125;&lt;/div&gt;);</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/code&gt;</span><br><span class="line">  ``` </span><br><span class="line">&gt; 由于JSX比HTML更接近JavaScript，因此JSX中标签的属性名是驼峰式的命名，例如：className表示的是html中标签属性名称。</span><br><span class="line">**预防注入式攻击**</span><br><span class="line">React DOM 在渲染之前默认会过滤所有传入的值。它可以确保你的应用不会被注入攻击。所有的内容在渲染之前都被转换成了字符串。这样可以有效地防止</span><br><span class="line">  &lt;a href=&quot;http://www.imooc.com/article/13553&quot; onclick=&quot;console.log(&apos; a is clicked&apos;); return false;&quot;&gt;XSS(跨站脚本) 攻击。&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">无论何种XXS攻击都需要通过服务器将攻击代码传递给用户，而React DOM在页面渲染之前将所有标签嵌入内容都转换成字符串了</span><br><span class="line">意识是说，React DOM会将所有传入值(JSX中传入的变量)，进行编码转义后再输出。例如用户评论区中的内容以变量content表示，React DOM会把content中的所有可疑符号如&lt;转换成HTML实体 &amp;It后再进行渲染</span><br><span class="line"></span><br><span class="line">当组件的props值为字符串时，字符串会先进行HTML转移。</span><br><span class="line">### this.setState</span><br><span class="line">我们知道，在React中状态state的更新是异步的，而setState函数是批量更新state的。因此，想要根据现在的state计算下一个state的方式为：</span><br></pre></td></tr></table></figure></p>
+<pre><code>this.setState({
+  num: this.state.num + 1, 
+}); // Wrong
+this.setState((preState) =&gt; {
+  num: preState + 1, 
+}); // Correct
+</code></pre><p>  <code>`</code></p>
+<blockquote>
+<p>当this.setState接受的参数是一个函数而不是一个对象时，该函数将以前一个state作为其第一个参数</p>
+</blockquote>
+<hr>
 
       
     </div>
@@ -321,12 +352,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具使用/" rel="tag"># 工具使用</a>
-          
-        </div>
-      
 
       
       
@@ -336,15 +361,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/07/XXS攻击/" rel="next" title="XXS攻击">
+                <i class="fa fa-chevron-left"></i> XXS攻击
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/07/functionAndObject/" rel="prev" title="JavaScript-函数与new对象的创建与执行">
-                JavaScript-函数与new对象的创建与执行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +501,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">1.</span> <span class="nav-text">JSX</span></a></li></ol></div>
             
 
           </div>
