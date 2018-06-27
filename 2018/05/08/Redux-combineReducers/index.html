@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具使用," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
-<meta name="keywords" content="工具使用">
+<meta name="description" content="combineReducers源码阅读了解combineReducer的源码对代码编写与调试意义重大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexoBlog">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/hexoBlog/index.html">
+<meta property="og:title" content="combineReducers">
+<meta property="og:url" content="http://yoursite.com/2018/05/08/Redux-combineReducers/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta property="og:description" content="combineReducers源码阅读了解combineReducer的源码对代码编写与调试意义重大">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-07T03:50:54.000Z">
+<meta property="og:updated_time" content="2018-05-08T03:42:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexoBlog">
-<meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="twitter:title" content="combineReducers">
+<meta name="twitter:description" content="combineReducers源码阅读了解combineReducer的源码对代码编写与调试意义重大">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/hexoBlog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/08/Redux-combineReducers/"/>
 
 
 
 
 
-  <title>hexoBlog | Hexo</title>
+  <title>combineReducers | Hexo</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/hexoBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/Redux-combineReducers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexoBlog</h1>
+          <h1 class="post-title" itemprop="name headline">combineReducers</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T22:02:54+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-08T11:33:22+08:00">
+                2018-05-08
               </time>
             
 
@@ -272,6 +271,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redux/" itemprop="url" rel="index">
+                    <span itemprop="name">Redux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -300,12 +321,10 @@
       
 
       
-        <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a><br>教程三：<a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">添加分类及标签</a></p>
-<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
-<p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
-<p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+        <h2 id="combineReducers源码阅读"><a href="#combineReducers源码阅读" class="headerlink" title="combineReducers源码阅读"></a>combineReducers源码阅读</h2><p>了解combineReducer的源码对代码编写与调试意义重大<a id="more"></a><br><div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">function getUnexpectedStateShapeWarningMessage(</span><br><span class="line">  inputState,</span><br><span class="line">  reducers,</span><br><span class="line">  action,</span><br><span class="line">  unexpectedKeyCache</span><br><span class="line">) &#123;</span><br><span class="line">  const reducerKeys = Object.keys(reducers)</span><br><span class="line">  const argumentName =</span><br><span class="line">    action &amp;&amp; action.type === ActionTypes.INIT</span><br><span class="line">      ? &apos;preloadedState argument passed to createStore&apos;</span><br><span class="line">      : &apos;previous state received by the reducer&apos;</span><br><span class="line"></span><br><span class="line">  if (reducerKeys.length === 0) &#123;</span><br><span class="line">    return (</span><br><span class="line">      &apos;Store does not have a valid reducer. Make sure the argument passed &apos; +</span><br><span class="line">      &apos;to combineReducers is an object whose values are reducers.&apos;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (!isPlainObject(inputState)) &#123;</span><br><span class="line">    return (</span><br><span class="line">      `The $&#123;argumentName&#125; has unexpected type of &quot;` +</span><br><span class="line">      &#123;&#125;.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] +</span><br><span class="line">      `&quot;. Expected argument to be an object with the following ` +</span><br><span class="line">      `keys: &quot;$&#123;reducerKeys.join(&apos;&quot;, &quot;&apos;)&#125;&quot;`</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  const unexpectedKeys = Object.keys(inputState).filter(</span><br><span class="line">    key =&gt; !reducers.hasOwnProperty(key) &amp;&amp; !unexpectedKeyCache[key]</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  unexpectedKeys.forEach(key =&gt; &#123;</span><br><span class="line">    unexpectedKeyCache[key] = true</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  if (action &amp;&amp; action.type === ActionTypes.REPLACE) return</span><br><span class="line"></span><br><span class="line">  if (unexpectedKeys.length &gt; 0) &#123;</span><br><span class="line">    return (</span><br><span class="line">      `Unexpected $&#123;unexpectedKeys.length &gt; 1 ? &apos;keys&apos; : &apos;key&apos;&#125; ` +</span><br><span class="line">      `&quot;$&#123;unexpectedKeys.join(&apos;&quot;, &quot;&apos;)&#125;&quot; found in $&#123;argumentName&#125;. ` +</span><br><span class="line">      `Expected to find one of the known reducer keys instead: ` +</span><br><span class="line">      `&quot;$&#123;reducerKeys.join(&apos;&quot;, &quot;&apos;)&#125;&quot;. Unexpected keys will be ignored.`</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div></p>
 
       
     </div>
@@ -321,12 +340,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具使用/" rel="tag"># 工具使用</a>
-          
-        </div>
-      
 
       
       
@@ -336,14 +349,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/07/React-JSX/" rel="next" title="React JSX">
+                <i class="fa fa-chevron-left"></i> React JSX
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/07/JavaScript-functionAndObject/" rel="prev" title="JavaScript-函数与new对象的创建与执行">
-                JavaScript-函数与new对象的创建与执行 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/14/Webpack-css-module/" rel="prev" title="CSS-Modules">
+                CSS-Modules <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#combineReducers源码阅读"><span class="nav-number">1.</span> <span class="nav-text">combineReducers源码阅读</span></a></li></ol></div>
             
 
           </div>

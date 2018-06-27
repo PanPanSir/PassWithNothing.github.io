@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具使用," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
-<meta name="keywords" content="工具使用">
+<meta name="description" content="翻译：https://nodejs.org/en/blog/npm/peer-dependencies/npm作为优秀的依赖管理工具，在处理子级依赖方面表现尤其优异">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexoBlog">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/hexoBlog/index.html">
+<meta property="og:title" content="peerDependencies">
+<meta property="og:url" content="http://yoursite.com/2018/06/26/peerDependencies/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta property="og:description" content="翻译：https://nodejs.org/en/blog/npm/peer-dependencies/npm作为优秀的依赖管理工具，在处理子级依赖方面表现尤其优异">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-07T03:50:54.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer-dependencies-1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-4.jpg">
+<meta property="og:updated_time" content="2018-06-26T11:08:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexoBlog">
-<meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="twitter:title" content="peerDependencies">
+<meta name="twitter:description" content="翻译：https://nodejs.org/en/blog/npm/peer-dependencies/npm作为优秀的依赖管理工具，在处理子级依赖方面表现尤其优异">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer-dependencies-1.jpg">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/hexoBlog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/26/peerDependencies/"/>
 
 
 
 
 
-  <title>hexoBlog | Hexo</title>
+  <title>peerDependencies | Hexo</title>
   
 
 
@@ -233,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/hexoBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/peerDependencies/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexoBlog</h1>
+          <h1 class="post-title" itemprop="name headline">peerDependencies</h1>
         
 
         <div class="post-meta">
@@ -262,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T22:02:54+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-26T17:07:07+08:00">
+                2018-06-26
               </time>
             
 
@@ -272,6 +276,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/npm/" itemprop="url" rel="index">
+                    <span itemprop="name">npm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -300,12 +326,20 @@
       
 
       
-        <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a><br>教程三：<a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">添加分类及标签</a></p>
-<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
-<p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
-<p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+        <p>翻译：<a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank" rel="noopener">https://nodejs.org/en/blog/npm/peer-dependencies/</a><br>npm作为优秀的依赖管理工具，在处理子级依赖方面表现尤其优异<a id="more"></a>：如果某一个包的运行依赖2版本的request和some-other-library，但some-other-library这个包的运行也需要依赖2版本的request，这便导致项目的依赖树如下了：<br><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer-dependencies-1.jpg" alt="Github"><br>这样处理很棒：现在some-other-library便拥有request v1的副本以供自己运行使用，而不是引用外层的request v2。</p>
+<h2 id="问题：插件"><a href="#问题：插件" class="headerlink" title="问题：插件"></a>问题：插件</h2><p>但以上方案处理方案在插件问题上无法处理。插件包必须配合与宿主包一起配合使用，即使插件没有直接使用宿主包。这种模式在node.js包生态系统已经存在好多例子：</p>
+<ul>
+<li>Grunt plugins</li>
+<li>Chai plugins</li>
+</ul>
+<p>即使你不太了解这些，你也应该记得在客户端开发时是通过\&lt;script>标签引入”jQuery plugins”（little \&lt;script>s you would drop into your page that would attach things to jQuery.prototype for your later convenience）。（一个插件，可能不会去引用某个模块，比如一个 jQuery 插件，它只是在 jQuery.propotype 上添加了一些方法，因此在安装插件的时候，插件应该是默认你已经安装了它的宿主模块）</p>
+<p>在本质上，插件是与宿主包一起使用而设计的。但你更重要的是，他们是应对特定版本的宿主包而设计的。例如，chai-as-promised插件的1.x版本和2.x版本是配合chai的0.5版本使用的，而chai-as-promised的3.x版本是配合chai的1.x版本使用的。快节奏且不友好的Grunt plugins插件里，grunt-contrib-stylus 0.3.1版本是与插件grunt的0.4.0rc4版本一起配合使用的，但是若grunt-contrib-stylus 0.3.1版本配合grunt 0.4.0rc5版本一起使用的话便会由于API的不同导致error。</p>
+<p>npm作为包管理工具，其任务重点在于依赖安装时的版本管理。但是在一般模式下，通过package.json中使用“dependencies”哈希的方式不能满足插件的依赖安装，比如大多数插件从不真实使用其宿主包等等。grunt插件中并没有执行“require(“grunt”)”，因此即使宿主包已经添加到了dependencies中，但这些下载下来的包并没有被使用。回归正题，你的应用引入的插件可能与宿主包不兼容。</p>
+<p>即使插件直接引用了某些依赖，可能是因为主机包提供了通用的API，在插件的package.json文件中的dependency配置会导致依赖树出现多个不应该出现的宿主包的副本。举例来讲，假如winston-mail 0.2.3版本指定”winston”: “0.5.x”作为其dependencites，由于它是通过测试的最新版本。作为APP开发人员，你可能想要拥有最新最棒的包，因此你会去寻找最新版本的 winston与winston-mail，在package.json文件中展现如下：</p>
+<p><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-2.jpg" alt="Github"><br>但此时执行 npm run 的结果并不是我们想要的：<br><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-3.jpg" alt="Github"><br>这来源于插件与主应用程序使用不同winston版本的API所带来的问题。</p>
+<h2 id="解决方案：peerDenpendencies"><a href="#解决方案：peerDenpendencies" class="headerlink" title="解决方案：peerDenpendencies"></a>解决方案：peerDenpendencies</h2><p>peerDenpendencies的使用方法很简单。在写插件时，决定好你所同等依赖的宿主包的版本，并将其添加到package.json：<br><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-4.jpg" alt="Github"></p>
+<p>现在，当安装包chai-as-promised时，chai包会一起被下载下来。并且当你需要下载另一个chai插件与0.x版本的Chai一起使用时，会出现一个error。<br>在依赖树中没有在dependencies中明确指定依赖的更高版本时，使用npm 的@1与@2版本会自动下载peerDenpendencies中指定的依赖版本。在npm@3版本中，不会出现以上的情况了。但在peerDenpendencies没有正确安装时，会收到peerDenpendencies没有安装的warning。</p>
+<p>一点小建议：peer dependency，并不像常用的dependencies那样需要较为精确地指定依赖的版本。你不应该将锁定peer dependencies的版本到指定的补丁版本。很令人烦恼的是一个Chai插件peer-depended于Chai 1.4.1，但另一个插件依赖于Chai 1.5.0，这仅仅是因为作者的懒惰并不愿意花时间计算出与之兼容的Chai之真正的最小版本。</p>
 
       
     </div>
@@ -321,12 +355,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具使用/" rel="tag"># 工具使用</a>
-          
-        </div>
-      
 
       
       
@@ -336,15 +364,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/22/函数防抖与函数节流/" rel="next" title="函数防抖与函数节流">
+                <i class="fa fa-chevron-left"></i> 函数防抖与函数节流
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/07/JavaScript-functionAndObject/" rel="prev" title="JavaScript-函数与new对象的创建与执行">
-                JavaScript-函数与new对象的创建与执行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题：插件"><span class="nav-number">1.</span> <span class="nav-text">问题：插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案：peerDenpendencies"><span class="nav-number">2.</span> <span class="nav-text">解决方案：peerDenpendencies</span></a></li></ol></div>
             
 
           </div>

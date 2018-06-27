@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具使用," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
-<meta name="keywords" content="工具使用">
+<meta name="description" content="Forwarding RefRef Forwarding可以将ref作为一个属性传递给组件的children。也就是父组件可以获取子组件的ref实例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexoBlog">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/hexoBlog/index.html">
+<meta property="og:title" content="react-forward-ref">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/react-ref/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta property="og:description" content="Forwarding RefRef Forwarding可以将ref作为一个属性传递给组件的children。也就是父组件可以获取子组件的ref实例">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-07T03:50:54.000Z">
+<meta property="og:updated_time" content="2018-06-15T11:32:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexoBlog">
-<meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="twitter:title" content="react-forward-ref">
+<meta name="twitter:description" content="Forwarding RefRef Forwarding可以将ref作为一个属性传递给组件的children。也就是父组件可以获取子组件的ref实例">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/hexoBlog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/react-ref/"/>
 
 
 
 
 
-  <title>hexoBlog | Hexo</title>
+  <title>react-forward-ref | Hexo</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/hexoBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/react-ref/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexoBlog</h1>
+          <h1 class="post-title" itemprop="name headline">react-forward-ref</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T22:02:54+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T17:24:14+08:00">
+                2018-06-15
               </time>
             
 
@@ -272,6 +271,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -300,12 +321,10 @@
       
 
       
-        <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a><br>教程三：<a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">添加分类及标签</a></p>
-<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
-<p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
-<p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+        <h2 id="Forwarding-Ref"><a href="#Forwarding-Ref" class="headerlink" title="Forwarding Ref"></a>Forwarding Ref</h2><p>Ref Forwarding可以将ref作为一个属性传递给组件的children。也就是父组件可以获取子组件的ref实例<a id="more"></a><br><a href="https://reactjs.org/docs/forwarding-refs.html" target="_blank" rel="noopener">Forwarding Refs</a></p>
+<h3 id="Forwarding-Ref的用法"><a href="#Forwarding-Ref的用法" class="headerlink" title="Forwarding Ref的用法"></a>Forwarding Ref的用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class MyReact extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.ref = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    console.log(this.ref);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (&lt;div&gt;</span><br><span class="line">      ref测试</span><br><span class="line">      &lt;InnerInput</span><br><span class="line">        ref=&#123;this.ref&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/div&gt;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ref可以挂到DOM实例上"><a href="#ref可以挂到DOM实例上" class="headerlink" title="ref可以挂到DOM实例上"></a>ref可以挂到DOM实例上</h4><p>当ref挂到一个DOM实例上时, ref.current是改DOM实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const InnerInput = React.forwardRef((props, ref) =&gt; &#123;</span><br><span class="line">  return (&lt;input ref=&#123;ref&#125; /&gt;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="ref不可以挂到Stateless-function-components"><a href="#ref不可以挂到Stateless-function-components" class="headerlink" title="ref不可以挂到Stateless function components"></a>ref不可以挂到Stateless function components</h4><p>当ref挂到一个无状态function组件时, 由于Stateless function components是函数调用，并不是实例，所以ref.current是null。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const InnerestInput = () =&gt; (&lt;input /&gt;);</span><br><span class="line">const InnerInput = React.forwardRef((props, ref) =&gt; &#123;</span><br><span class="line">  return (&lt;InnerestInput ref=&#123;ref&#125; /&gt;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,12 +340,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具使用/" rel="tag"># 工具使用</a>
-          
-        </div>
-      
 
       
       
@@ -336,14 +349,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/15/CRA搭建学习记录/" rel="next" title="CRA搭建学习记录">
+                <i class="fa fa-chevron-left"></i> CRA搭建学习记录
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/07/JavaScript-functionAndObject/" rel="prev" title="JavaScript-函数与new对象的创建与执行">
-                JavaScript-函数与new对象的创建与执行 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/21/React-code-splitting/" rel="prev" title="React-code-splitting">
+                React-code-splitting <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Forwarding-Ref"><span class="nav-number">1.</span> <span class="nav-text">Forwarding Ref</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Forwarding-Ref的用法"><span class="nav-number">1.1.</span> <span class="nav-text">Forwarding Ref的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ref可以挂到DOM实例上"><span class="nav-number">1.1.1.</span> <span class="nav-text">ref可以挂到DOM实例上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ref不可以挂到Stateless-function-components"><span class="nav-number">1.1.2.</span> <span class="nav-text">ref不可以挂到Stateless function components</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
