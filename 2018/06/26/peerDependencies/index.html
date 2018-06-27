@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-3.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/peer%20-dependencies-4.jpg">
-<meta property="og:updated_time" content="2018-06-26T11:08:41.000Z">
+<meta property="og:updated_time" content="2018-06-27T10:58:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="peerDependencies">
 <meta name="twitter:description" content="翻译：https://nodejs.org/en/blog/npm/peer-dependencies/npm作为优秀的依赖管理工具，在处理子级依赖方面表现尤其优异">
@@ -332,7 +332,7 @@
 <li>Grunt plugins</li>
 <li>Chai plugins</li>
 </ul>
-<p>即使你不太了解这些，你也应该记得在客户端开发时是通过\&lt;script>标签引入”jQuery plugins”（little \&lt;script>s you would drop into your page that would attach things to jQuery.prototype for your later convenience）。（一个插件，可能不会去引用某个模块，比如一个 jQuery 插件，它只是在 jQuery.propotype 上添加了一些方法，因此在安装插件的时候，插件应该是默认你已经安装了它的宿主模块）</p>
+<p>即使你不太了解这些，你也应该记得在客户端开发时是通过\&lt;script>标签引入”jQuery plugins”。（一个插件，可能不会去引用某个模块，比如一个 jQuery 插件，它只是在 jQuery.propotype 上添加了一些方法，因此在安装插件的时候，插件应该是默认你已经安装了它的宿主模块）</p>
 <p>在本质上，插件是与宿主包一起使用而设计的。但你更重要的是，他们是应对特定版本的宿主包而设计的。例如，chai-as-promised插件的1.x版本和2.x版本是配合chai的0.5版本使用的，而chai-as-promised的3.x版本是配合chai的1.x版本使用的。快节奏且不友好的Grunt plugins插件里，grunt-contrib-stylus 0.3.1版本是与插件grunt的0.4.0rc4版本一起配合使用的，但是若grunt-contrib-stylus 0.3.1版本配合grunt 0.4.0rc5版本一起使用的话便会由于API的不同导致error。</p>
 <p>npm作为包管理工具，其任务重点在于依赖安装时的版本管理。但是在一般模式下，通过package.json中使用“dependencies”哈希的方式不能满足插件的依赖安装，比如大多数插件从不真实使用其宿主包等等。grunt插件中并没有执行“require(“grunt”)”，因此即使宿主包已经添加到了dependencies中，但这些下载下来的包并没有被使用。回归正题，你的应用引入的插件可能与宿主包不兼容。</p>
 <p>即使插件直接引用了某些依赖，可能是因为主机包提供了通用的API，在插件的package.json文件中的dependency配置会导致依赖树出现多个不应该出现的宿主包的副本。举例来讲，假如winston-mail 0.2.3版本指定”winston”: “0.5.x”作为其dependencites，由于它是通过测试的最新版本。作为APP开发人员，你可能想要拥有最新最棒的包，因此你会去寻找最新版本的 winston与winston-mail，在package.json文件中展现如下：</p>
