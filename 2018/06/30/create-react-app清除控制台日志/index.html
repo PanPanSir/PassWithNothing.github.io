@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="CRA（create-react-app）， 是一个搭建react app的脚手架。使用简单，其封装了大量的项目配置，使开发者不必关心项目搭建中的各类繁琐的配置。项目地址自定义webpack配置性能优化 - 查看 webpack 打包后所有的依赖关系（webpack 可视化工具）:webpack-bundle-analyzer">
+<meta name="description" content="使用create-react-app时发现控制台的日志会被自动清除，运行在node端的日志信息无法获得，这非常不利于服务端的代码调试。">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CRA搭建学习记录">
-<meta property="og:url" content="http://yoursite.com/2018/06/15/CRA搭建学习记录/index.html">
+<meta property="og:title" content="create-react-app清除控制台日志">
+<meta property="og:url" content="http://yoursite.com/2018/06/30/create-react-app清除控制台日志/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="CRA（create-react-app）， 是一个搭建react app的脚手架。使用简单，其封装了大量的项目配置，使开发者不必关心项目搭建中的各类繁琐的配置。项目地址自定义webpack配置性能优化 - 查看 webpack 打包后所有的依赖关系（webpack 可视化工具）:webpack-bundle-analyzer">
+<meta property="og:description" content="使用create-react-app时发现控制台的日志会被自动清除，运行在node端的日志信息无法获得，这非常不利于服务端的代码调试。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-30T10:03:21.000Z">
+<meta property="og:updated_time" content="2018-06-30T10:03:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRA搭建学习记录">
-<meta name="twitter:description" content="CRA（create-react-app）， 是一个搭建react app的脚手架。使用简单，其封装了大量的项目配置，使开发者不必关心项目搭建中的各类繁琐的配置。项目地址自定义webpack配置性能优化 - 查看 webpack 打包后所有的依赖关系（webpack 可视化工具）:webpack-bundle-analyzer">
+<meta name="twitter:title" content="create-react-app清除控制台日志">
+<meta name="twitter:description" content="使用create-react-app时发现控制台的日志会被自动清除，运行在node端的日志信息无法获得，这非常不利于服务端的代码调试。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/15/CRA搭建学习记录/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/30/create-react-app清除控制台日志/"/>
 
 
 
 
 
-  <title>CRA搭建学习记录 | PAN's Blog</title>
+  <title>create-react-app清除控制台日志 | PAN's Blog</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/CRA搭建学习记录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/30/create-react-app清除控制台日志/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CRA搭建学习记录</h1>
+          <h1 class="post-title" itemprop="name headline">create-react-app清除控制台日志</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T14:07:11+08:00">
-                2018-06-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-30T17:42:13+08:00">
+                2018-06-30
               </time>
             
 
@@ -322,7 +322,13 @@
       
 
       
-        <p>CRA（create-react-app）， 是一个搭建react app的脚手架。使用简单，其封装了大量的项目配置，使开发者不必关心项目搭建中的各类繁琐的配置。<br><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases" target="_blank" rel="noopener">项目地址</a><br><a href="https://segmentfault.com/a/1190000011752103" target="_blank" rel="noopener">自定义webpack配置</a><br>性能优化 - 查看 webpack 打包后所有的依赖关系（webpack 可视化工具）:webpack-bundle-analyzer</p>
+        <p>使用create-react-app时发现控制台的日志会被自动清除，运行在node端的日志信息无法获得，这非常不利于服务端的代码调试。<a id="more"></a></p>
+<h2 id="清理屏幕的shell命令"><a href="#清理屏幕的shell命令" class="headerlink" title="清理屏幕的shell命令"></a>清理屏幕的shell命令</h2><p>clear 只是将控制台信息进行翻页，改命令执行后仍然通过向上翻译看到旧的日志<br>printf “\033c” 可以彻底清除屏幕日志</p>
+<h2 id="create-react-app是如何清除屏幕日志的？"><a href="#create-react-app是如何清除屏幕日志的？" class="headerlink" title="create-react-app是如何清除屏幕日志的？"></a>create-react-app是如何清除屏幕日志的？</h2><p>运行npm start时执行的是<code>node scripts/customized-config start</code>脚本。查看<code>scripts/customized-config</code>文件找到npm start真正执行的文件是<code>react-scripts/scripts/start.js</code>文件，在该文件中执行了这样一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const clearConsole = require(&apos;react-dev-utils/clearConsole&apos;);</span><br><span class="line">  clearConsole();</span><br><span class="line"></span><br><span class="line">// react-dev-utils/clearConsole</span><br><span class="line">function clearConsole() &#123;</span><br><span class="line">  process.stdout.write(process.platform === &apos;win32&apos; ? &apos;\x1B[2J\x1B[0f&apos; : &apos;\x1B[2J\x1B[3J\x1B[H&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = clearConsole;</span><br></pre></td></tr></table></figure></p>
+<p>因此，真正清屏的命令是<code>process.stdout.write(process.platform === &#39;win32&#39; ? &#39;\x1B[2J\x1B[0f&#39; : &#39;\x1B[2J\x1B[3J\x1B[H&#39;);</code>操作</p>
+<h3 id="process-stdout-write与console-log的区别"><a href="#process-stdout-write与console-log的区别" class="headerlink" title="process.stdout.write与console.log的区别"></a>process.stdout.write与console.log的区别</h3><p>看源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Console.prototype.log = function() &#123;</span><br><span class="line">  this._stdout.write(util.format.apply(this, arguments) + &apos;\n&apos;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>console.log只是将参数格式化后的process.stdout.write。<br>这个format使console.log可以打印出许多不可读的字符。</p>
+<h3 id="x1B-2J-x1B-3J-x1B-H是什么？"><a href="#x1B-2J-x1B-3J-x1B-H是什么？" class="headerlink" title="\x1B[2J\x1B[3J\x1B[H是什么？"></a><code>\x1B[2J\x1B[3J\x1B[H</code>是什么？</h3><p><code>\x1B[2J\x1B[3J\x1B[H</code>是转义序列，用于实现与<code>\033c</code>类似的清屏操作。</p>
 
       
     </div>
@@ -347,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/Webpack-Plugin/" rel="next" title="Webpack-Plugin">
-                <i class="fa fa-chevron-left"></i> Webpack-Plugin
+              <a href="/2018/06/26/peerDependencies/" rel="next" title="peerDependencies">
+                <i class="fa fa-chevron-left"></i> peerDependencies
               </a>
             
           </div>
@@ -356,10 +362,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/15/react-ref/" rel="prev" title="react-forward-ref">
-                react-forward-ref <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,8 +413,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -472,6 +483,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#清理屏幕的shell命令"><span class="nav-number">1.</span> <span class="nav-text">清理屏幕的shell命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-react-app是如何清除屏幕日志的？"><span class="nav-number">2.</span> <span class="nav-text">create-react-app是如何清除屏幕日志的？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#process-stdout-write与console-log的区别"><span class="nav-number">2.1.</span> <span class="nav-text">process.stdout.write与console.log的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x1B-2J-x1B-3J-x1B-H是什么？"><span class="nav-number">2.2.</span> <span class="nav-text">\x1B[2J\x1B[3J\x1B[H是什么？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
