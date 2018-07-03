@@ -9,6 +9,9 @@ body:after {
 body:after {
   clear: both;
 }
+p {
+  text-align: right;
+}
 html,
 body,
 div,
