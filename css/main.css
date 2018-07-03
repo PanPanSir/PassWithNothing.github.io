@@ -275,7 +275,6 @@ h6 {
 }
 p {
   margin: 0 0 20px 0;
-  text-align: left;
 }
 a {
   color: #555;
@@ -1824,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f6ff61;
+  background: #66db98;
 }
 .links-of-blogroll {
   font-size: 13px;
