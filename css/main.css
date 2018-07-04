@@ -1289,6 +1289,7 @@ pre .javascript .function {
 @media (min-width: 992px) {
   .posts-expand .post-body {
     text-align: left;
+    text-indent: 1.5rem;
   }
 }
 .posts-expand .post-body h2,
@@ -1297,6 +1298,7 @@ pre .javascript .function {
 .posts-expand .post-body h5,
 .posts-expand .post-body h6 {
   padding-top: 10px;
+  text-indent: 0;
 }
 .posts-expand .post-body h2 .header-anchor,
 .posts-expand .post-body h3 .header-anchor,
@@ -1823,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bdff73;
+  background: #b18ecc;
 }
 .links-of-blogroll {
   font-size: 13px;
