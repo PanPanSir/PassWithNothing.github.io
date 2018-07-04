@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="PAN&#39;s Blog">
 <meta property="og:description" content="git reset 与 git revert区别revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。例如，xxx是删除了一行代码：var result = null;而revert就是在相同的位置再加上一行代码：var result = null。而commit XXX并没有被删除！只是当前branch的HEAD指向新的co">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-03T11:36:31.000Z">
+<meta property="og:updated_time" content="2018-07-04T04:00:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git revert">
 <meta name="twitter:description" content="git reset 与 git revert区别revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。例如，xxx是删除了一行代码：var result = null;而revert就是在相同的位置再加上一行代码：var result = null。而commit XXX并没有被删除！只是当前branch的HEAD指向新的co">
@@ -323,8 +323,10 @@
 
       
         <h2 id="git-reset-与-git-revert区别"><a href="#git-reset-与-git-revert区别" class="headerlink" title="git reset 与 git revert区别"></a>git reset 与 git revert区别</h2><p>revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。<br>例如，xxx是删除了一行代码：var result = null;而revert就是在相同的位置再加上一行代码：var result = null。<br>而commit XXX并没有被删除！只是当前branch的HEAD指向新的commit A而已。这是与reset彻底删除commit XXX的根本区别。<br><code>git revert -n master~4..master~1 ;// -n: 手动提交revert后的change，批量revert第1，2，3次commit</code></p>
-<h2 id="查看git-log的graph图"><a href="#查看git-log的graph图" class="headerlink" title="查看git log的graph图"></a>查看git log的graph图</h2><p><code>git log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --</code> 每条线都是一个 branch（分支），每个点都是一次 commit（提交记录）。 </p>
-<h2 id="git-revert-xxx-m-number"><a href="#git-revert-xxx-m-number" class="headerlink" title="git revert xxx -m {number}"></a>git revert xxx -m {number}</h2><p>该图看起来很复杂，在revert时会很错乱。可以<code>git log</code>先看一下log的历史。例如想要回滚commit：f1f5ae9f12ad0fece470391935039500a45c0787。如图所示，f1f5ae9f12ad0fece470391935039500a45c0787是一个merge commit，其之前的两个commit是cfb04f280与35a018399。结合graph可以看得出cfb04f280是分支 feature/FECHI-8886-partner-plus-ci的HEAD commit，而35a018399是分支origin/hotfix/FECHI-8886-reactupgrade-revert的head commit</p>
+<h2 id="查看git-log的graph图"><a href="#查看git-log的graph图" class="headerlink" title="查看git log的graph图"></a>查看git log的graph图</h2><p><code>git log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --</code> 每条线都是一个 branch（分支），每个点都是一次 commit（提交记录）。<br><img src="" alt="graph图"></p>
+<h2 id="git-revert-xxx-m-number"><a href="#git-revert-xxx-m-number" class="headerlink" title="git revert xxx -m {number}"></a>git revert xxx -m {number}</h2><p>该图看起来很复杂，在revert时会很错乱。可以<code>git log</code>先看一下log的历史。例如想要回滚commit：f1f5ae9f12ad0fece470391935039500a45c0787。如图所示，f1f5ae9f12ad0fece470391935039500a45c0787是一个merge commit，其之前的两个commit是cfb04f280与35a018399。结合graph可以看得出cfb04f280是分支 feature/FECHI-8886-partner-plus-ci的HEAD commit，而35a018399是分支origin/hotfix/FECHI-8886-reactupgrade-revert的head commit<br><img src="" alt="graph图"></p>
+<h2 id="git-revert-HEAD-3"><a href="#git-revert-HEAD-3" class="headerlink" title="git revert HEAD~3"></a>git revert HEAD~3</h2><p>还原HEAD分支的倒数第四次commit所生成的修改，并且本次还原操作会生成一个新的commit。</p>
+<h2 id="git-revert-n-master-5-master-2"><a href="#git-revert-n-master-5-master-2" class="headerlink" title="git revert -n master~5..master~2"></a>git revert -n master~5..master~2</h2><p>还原master分支上倒数第五次（包含第五次）到倒数第二次（包含第二次）的修改，但是不会生成一个新的commit（-n选项控制）。只修改working tree与index，还没有commit。<br><a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a></p>
 
       
     </div>
@@ -480,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert区别"><span class="nav-number">1.</span> <span class="nav-text">git reset 与 git revert区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看git-log的graph图"><span class="nav-number">2.</span> <span class="nav-text">查看git log的graph图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-xxx-m-number"><span class="nav-number">3.</span> <span class="nav-text">git revert xxx -m {number}</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert区别"><span class="nav-number">1.</span> <span class="nav-text">git reset 与 git revert区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看git-log的graph图"><span class="nav-number">2.</span> <span class="nav-text">查看git log的graph图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-xxx-m-number"><span class="nav-number">3.</span> <span class="nav-text">git revert xxx -m {number}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-HEAD-3"><span class="nav-number">4.</span> <span class="nav-text">git revert HEAD~3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-n-master-5-master-2"><span class="nav-number">5.</span> <span class="nav-text">git revert -n master~5..master~2</span></a></li></ol></div>
             
 
           </div>
