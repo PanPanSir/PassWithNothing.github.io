@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="PAN&#39;s Blog">
 <meta property="og:description" content="当bundle太大时，APP运行时需要大量时间去加载bundle。为避免体量大的bundle的长时间加载，需要将bundle进行分割。webpack、Browserify等打包工具支持Code-Splitting特性，他们可以生产大量bundle在运行时动态加载。webpack-code-splitting">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-29T03:36:46.000Z">
+<meta property="og:updated_time" content="2018-07-08T02:13:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack-code-splitting">
 <meta name="twitter:description" content="当bundle太大时，APP运行时需要大量时间去加载bundle。为避免体量大的bundle的长时间加载，需要将bundle进行分割。webpack、Browserify等打包工具支持Code-Splitting特性，他们可以生产大量bundle在运行时动态加载。webpack-code-splitting">
@@ -340,7 +340,7 @@
 </li>
 </ul>
 <p>使用React Loadable后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import Loadable from &apos;react-loadable&apos;;</span><br><span class="line"></span><br><span class="line">const LoadableOtherComponent = Loadable(&#123;</span><br><span class="line">  loader: () =&gt; import(&apos;./OtherComponent&apos;), // 本次展示的目标组件</span><br><span class="line">  loading: () =&gt; &lt;div&gt;Loading...&lt;/div&gt;, // 目标组件呈现之前展示的loading组件</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const MyComponent = () =&gt; (</span><br><span class="line">  &lt;LoadableOtherComponent/&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
-<p>React Loadable还提供loading states, error states, timeouts, preloading等API。</p>
+<p>React Loadable还提供loading states, error states, timeouts, preloading等API。<br>webpack的<a href="https://webpack.js.org/loaders/bundle-loader/#src/components/Sidebar/Sidebar.jsx" target="_blank" rel="noopener">bundle-loader</a>，也可以做到异步加载</p>
 <h3 id="基于路由的code-splitting"><a href="#基于路由的code-splitting" class="headerlink" title="基于路由的code-splitting"></a>基于路由的code-splitting</h3><p>为不影响用户体验，可以在路由层面做code-splitting。例如：(Router + Loadable)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserRouter as Router, Route, Switch &#125; from &apos;react-router-dom&apos;;</span><br><span class="line">import Loadable from &apos;react-loadable&apos;;</span><br><span class="line"></span><br><span class="line">const Loading = () =&gt; &lt;div&gt;Loading...&lt;/div&gt;;</span><br><span class="line"></span><br><span class="line">const Home = Loadable(&#123;</span><br><span class="line">  loader: () =&gt; import(&apos;./routes/Home&apos;),</span><br><span class="line">  loading: Loading,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const About = Loadable(&#123;</span><br><span class="line">  loader: () =&gt; import(&apos;./routes/About&apos;),</span><br><span class="line">  loading: Loading,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const App = () =&gt; (</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route exact path=&quot;/&quot; component=&#123;Home&#125;/&gt;</span><br><span class="line">      &lt;Route path=&quot;/about&quot; component=&#123;About&#125;/&gt;</span><br><span class="line">    &lt;/Switch&gt;</span><br><span class="line">  &lt;/Router&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <h2 id="防止重复"><a href="#防止重复" class="headerlink" title="防止重复"></a>防止重复</h2><p><a href="https://webpack.docschina.org/plugins/commons-chunk-plugin" target="_blank" rel="noopener">CommonsChunkPlugin</a>插件可以将公共的依赖模块提取到已有的入口chunk中，或者提取到一个新的chunk。<br>如果入口 chunks 之间包含重复的模块，那些重复模块将被抽取出来存入一个chunk中。</p>
 <h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>通过create-react-app分析这三种code-splitting</p>
@@ -457,7 +457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
