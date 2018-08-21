@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="description" content="目标在页面第一次渲染时就将样式与首屏有效内容呈现给用户。 页面的首次渲染发生时机HTML中首个外部的js资源执行完，否则发生在HTML解析完毕； 现象 包含外部资源的script标签置于body标签之前，外部js执行完之前不会进行首次页面的渲染； 包含外部资源的script标签置于body标签之后，外部js执行完之前首次页面的渲染已经完成； 包含外部资源的css标签置于body标签之前，外部css">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexoBlog">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/hexoBlog/index.html">
+<meta property="og:title" content="浏览器解析HTML的过程">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/浏览器解析HTML的过程/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta property="og:description" content="目标在页面第一次渲染时就将样式与首屏有效内容呈现给用户。 页面的首次渲染发生时机HTML中首个外部的js资源执行完，否则发生在HTML解析完毕； 现象 包含外部资源的script标签置于body标签之前，外部js执行完之前不会进行首次页面的渲染； 包含外部资源的script标签置于body标签之后，外部js执行完之前首次页面的渲染已经完成； 包含外部资源的css标签置于body标签之前，外部css">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-30T10:04:14.000Z">
+<meta property="og:updated_time" content="2018-08-17T08:14:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexoBlog">
-<meta name="twitter:description" content="Hexo博客搭建使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录">
+<meta name="twitter:title" content="浏览器解析HTML的过程">
+<meta name="twitter:description" content="目标在页面第一次渲染时就将样式与首屏有效内容呈现给用户。 页面的首次渲染发生时机HTML中首个外部的js资源执行完，否则发生在HTML解析完毕； 现象 包含外部资源的script标签置于body标签之前，外部js执行完之前不会进行首次页面的渲染； 包含外部资源的script标签置于body标签之后，外部js执行完之前首次页面的渲染已经完成； 包含外部资源的css标签置于body标签之前，外部css">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/hexoBlog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/浏览器解析HTML的过程/"/>
 
 
 
 
 
-  <title>hexoBlog | PAN's Blog</title>
+  <title>浏览器解析HTML的过程 | PAN's Blog</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/hexoBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/浏览器解析HTML的过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexoBlog</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器解析HTML的过程</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T22:02:54+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T21:20:55+08:00">
+                2018-08-16
               </time>
             
 
@@ -285,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -322,12 +322,17 @@
       
 
       
-        <h2 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h2><p>使用hexo进行博客搭建时错误百出，心痛至极，为避免错误重现，特此记录<a id="more"></a><br>参考教程：<br>教程一：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a><br>教程二：<a href="https://segmentfault.com/a/1190000014166262" target="_blank" rel="noopener">用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</a><br>教程三：<a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">添加分类及标签</a></p>
-<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>描述：在按照教程一进行操作时，在安装Git部署插件：npm install hexo-deployer-git –save之后总会出现hexo本地没有安装的错误，即使此时再次安装hexo，在运行<code>hexo -g</code>时又会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-marked</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-server</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Error: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure></p>
-<p>这是因为npm版本问题，所以需要参考教程二使用yarn进行安装。<br>但是在使用教程二后又发现很多需要注意的地方。<br>假如你在本地新建一个目录BlogDir。在该目录下你需要执行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo -S // 安装hexo</span><br><span class="line">hexo init blog // 新建项目blog，在该目录下写博客</span><br></pre></td></tr></table></figure></p>
-<p>新建blog目录后<code>cd blog</code>，进行的命令有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>在blog目录下安装hexo-deployer-git 插件并运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git -S</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>问题描述：即使正确设置了GitHub上的Deploy keys后还是在<code>hexo d</code>命令部署时出现403之类的权限错误<br>解决办法：将 _config.yml中的配置repository的链接从<a href="https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone" target="_blank" rel="noopener">https://github.com/persilee/MyBlog.git的HTTPS链接改为git链接。就是链接改为在GitHub上clone仓库时的Clone</a> with SSH 链接，由于此时clone的链接是git不是http协议。<br>由于此时在clone with ssh处的提示有Use an SSH key and passphrase from account.所以，既然配置了ssh类型的key，当然需要配置ssh对应的链接啦~(≧▽≦)/~</p>
+        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>在页面第一次渲染时就将样式与首屏有效内容呈现给用户。</p>
+<h2 id="页面的首次渲染发生时机"><a href="#页面的首次渲染发生时机" class="headerlink" title="页面的首次渲染发生时机"></a>页面的首次渲染发生时机</h2><p>HTML中首个外部的js资源执行完，否则发生在HTML解析完毕；</p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><ul>
+<li>包含外部资源的script标签置于body标签之前，外部js执行完之前不会进行首次页面的渲染；</li>
+<li>包含外部资源的script标签置于body标签之后，外部js执行完之前首次页面的渲染已经完成；</li>
+<li>包含外部资源的css标签置于body标签之前，外部css解析完之前不会进行首次页面的渲染；</li>
+<li>包含外部资源的css标签置于body与script标签之后，外部css解析完之前会进行首次页面的渲染，在css加载完成后会发生闪屏现象；</li>
+</ul>
+<h2 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h2><p>在server端通过增加资源的响应时间，便于肉眼观察资源的加载执行时间与页面呈现的先后顺序。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;mainContainer&quot;&gt;hahah，你是傻子吧&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">  &lt;script src=&quot;./ceshi.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./index.css&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>server端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">exports.start = function() &#123;</span><br><span class="line">    http.createServer((req, res) =&gt; &#123;</span><br><span class="line">    var url = req.url;</span><br><span class="line">    var fileName = &apos;&apos;;</span><br><span class="line">    if (url) &#123;</span><br><span class="line">      switch(url.substr(1)) &#123;</span><br><span class="line">        case &apos;index.css&apos;:</span><br><span class="line">          fileName = &apos;./index.css&apos;;</span><br><span class="line">          break;</span><br><span class="line">        case &apos;ceshi.js&apos;:</span><br><span class="line">          fileName = &apos;./ceshi.js&apos;;</span><br><span class="line">          break;</span><br><span class="line">        default:</span><br><span class="line">          fileName = &apos;./index.html&apos;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&apos;fileName######&apos;, fileName);</span><br><span class="line">    fs.readFile(fileName, &apos;utf-8&apos;, (err, data) =&gt; &#123;</span><br><span class="line">      if (err) throw err; </span><br><span class="line">        if (/css/.test(fileName)) &#123;</span><br><span class="line">          res.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;text/css&apos;&#125;);</span><br><span class="line">          res.write(data);</span><br><span class="line">          setTimeout(()  =&gt; res.end(), 5000);</span><br><span class="line">        &#125; else if (/js/.test(fileName)) &#123;</span><br><span class="line">          res.write(data);</span><br><span class="line">          res.end();</span><br><span class="line">        &#125; else if (/html/.test(fileName)) &#123;</span><br><span class="line">          res.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;text/html&apos;&#125;);</span><br><span class="line">          res.write(data);</span><br><span class="line">          res.end();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;).listen(8888);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -352,15 +357,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/03/label与input事件捕获/" rel="next" title="label与input事件捕获">
+                <i class="fa fa-chevron-left"></i> label与input事件捕获
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/07/JavaScript-functionAndObject/" rel="prev" title="JavaScript-函数与new对象的创建与执行">
-                JavaScript-函数与new对象的创建与执行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面的首次渲染发生时机"><span class="nav-number">2.</span> <span class="nav-text">页面的首次渲染发生时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现象"><span class="nav-number">3.</span> <span class="nav-text">现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验方法"><span class="nav-number">4.</span> <span class="nav-text">实验方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
