@@ -230,6 +230,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/master区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="panzhiying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PAN's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/master区别/" itemprop="url">master区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T10:45:25+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考资料：<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF</a></p>
+<h2 id="origin-master"><a href="#origin-master" class="headerlink" title="origin master"></a>origin master</h2><p>origin 是远程仓库地址的别名，通过.git/config文件可以做具体设置。<br>origin master 则是远程仓库的分支master</p>
+<h2 id="origin-master-1"><a href="#origin-master-1" class="headerlink" title="origin/master"></a>origin/master</h2><p>origin/master 是远程仓库中master分支在本地仓库的一个副本。<br>当我们clone下一个远程Git仓库时，会自动将远程仓库命名为origin(即远程仓库地址的别名就是origin)，同时会创建一个远程master分支的副本origin/master到本地仓库，最后还会自动创建一个本地master分支。<br>例如，你在本地master分支上做了一些修改并Git commit了，但在这些修改push到远程master之前origin/master中不会出现这些新的commit。其次，若远程master出现新的commit了，但是只要你不与 origin 服务器连接，你的 origin/master 中也不会出现那些新的commit。</p>
+<h2 id="git-fetch-origin"><a href="#git-fetch-origin" class="headerlink" title="git fetch origin"></a>git fetch origin</h2><p>如果要同步你的工作，运行 git fetch origin 命令。 这个命令查找 “origin” 是哪一个服务器（在本例中，它是 git.ourcompany.com），从中抓取本地没有的数据，并且更新本地数据库，移动 origin/master 指针指向新的、更新后的位置。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/浏览器解析HTML的过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -249,7 +394,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/16/浏览器解析HTML的过程/" itemprop="url">浏览器解析HTML的过程</a></h1>
+                <a class="post-title-link" href="/2018/08/16/浏览器解析HTML的过程/" itemprop="url">浏览器的渲染：过程与原理</a></h1>
         
 
         <div class="post-meta">
@@ -323,17 +468,62 @@
       
         
           
-            <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>在页面第一次渲染时就将样式与首屏有效内容呈现给用户。</p>
-<h2 id="页面的首次渲染发生时机"><a href="#页面的首次渲染发生时机" class="headerlink" title="页面的首次渲染发生时机"></a>页面的首次渲染发生时机</h2><p>HTML中首个外部的js资源执行完，否则发生在HTML解析完毕；</p>
-<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><ul>
-<li>包含外部资源的script标签置于body标签之前，外部js执行完之前不会进行首次页面的渲染；</li>
-<li>包含外部资源的script标签置于body标签之后，外部js执行完之前首次页面的渲染已经完成；</li>
-<li>包含外部资源的css标签置于body标签之前，外部css解析完之前不会进行首次页面的渲染；</li>
-<li>包含外部资源的css标签置于body与script标签之后，外部css解析完之前会进行首次页面的渲染，在css加载完成后会发生闪屏现象；</li>
+            <p>转发自：<br><a href="https://zhuanlan.zhihu.com/p/29418126" target="_blank" rel="noopener">浏览器的渲染：过程与原理</a></p>
+<h2 id="内容说明"><a href="#内容说明" class="headerlink" title="内容说明"></a>内容说明</h2><p>本文不是关于浏览器渲染的底层原理或前端优化具体细节的讲解，而是关于浏览器对页面的渲染——这一过程的描述及其背后原理的解释。这是因为前端优化是一个非常庞大且零散的知识集合，一篇文章如果要写优化的具体方法恐怕只能做一些有限的列举。<br>然而，如果了解清楚浏览器的渲染过程、渲染原理，其实就掌握了指导原则。根据优化原则，可以实现出无数种具体的优化方案，各种预编译、预加载、资源合并、按需加载方案都是针对浏览器渲染习惯的优化。</p>
+<h2 id="关键渲染路径"><a href="#关键渲染路径" class="headerlink" title="关键渲染路径"></a>关键渲染路径</h2><p>提到页面渲染，有几个相关度非常高的概念，最重要的是关键渲染路径，其他几个概念都可以从它展开，下面稍作说明。<br>关键渲染路径（Critical Rendering Path）是指与当前用户操作有关的内容。例如用户刚刚打开一个页面，首屏的显示就是当前用户操作相关的内容，具体就是浏览器收到 HTML、CSS 和 JavaScript 等资源并对其进行处理从而渲染出 Web 页面。</p>
+<p>了解浏览器渲染的过程与原理，很大程度上是为了优化关键渲染路径，但优化应该是针对具体问题的解决方案，所以优化没有一定之规。例如为了保障首屏内容的最快速显示，通常会提到渐进式页面渲染，但是为了渐进式页面渲染，就需要做资源的拆分，那么以什么粒度拆分、要不要拆分，不同页面、不同场景策略不同。具体方案的确定既要考虑体验问题，也要考虑工程问题。</p>
+<h2 id="浏览器渲染页面的过程"><a href="#浏览器渲染页面的过程" class="headerlink" title="浏览器渲染页面的过程"></a>浏览器渲染页面的过程</h2><ul>
+<li>DNS 查询；</li>
+<li>TCP 连接；</li>
+<li>HTTP 请求即响应；</li>
+<li>服务器响应；</li>
+<li>客户端渲染；</li>
 </ul>
-<h2 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h2><p>在server端通过增加资源的响应时间，便于肉眼观察资源的加载执行时间与页面呈现的先后顺序。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;mainContainer&quot;&gt;hahah，你是傻子吧&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">  &lt;script src=&quot;./ceshi.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./index.css&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>server端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">exports.start = function() &#123;</span><br><span class="line">    http.createServer((req, res) =&gt; &#123;</span><br><span class="line">    var url = req.url;</span><br><span class="line">    var fileName = &apos;&apos;;</span><br><span class="line">    if (url) &#123;</span><br><span class="line">      switch(url.substr(1)) &#123;</span><br><span class="line">        case &apos;index.css&apos;:</span><br><span class="line">          fileName = &apos;./index.css&apos;;</span><br><span class="line">          break;</span><br><span class="line">        case &apos;ceshi.js&apos;:</span><br><span class="line">          fileName = &apos;./ceshi.js&apos;;</span><br><span class="line">          break;</span><br><span class="line">        default:</span><br><span class="line">          fileName = &apos;./index.html&apos;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&apos;fileName######&apos;, fileName);</span><br><span class="line">    fs.readFile(fileName, &apos;utf-8&apos;, (err, data) =&gt; &#123;</span><br><span class="line">      if (err) throw err; </span><br><span class="line">        if (/css/.test(fileName)) &#123;</span><br><span class="line">          res.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;text/css&apos;&#125;);</span><br><span class="line">          res.write(data);</span><br><span class="line">          setTimeout(()  =&gt; res.end(), 5000);</span><br><span class="line">        &#125; else if (/js/.test(fileName)) &#123;</span><br><span class="line">          res.write(data);</span><br><span class="line">          res.end();</span><br><span class="line">        &#125; else if (/html/.test(fileName)) &#123;</span><br><span class="line">          res.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;text/html&apos;&#125;);</span><br><span class="line">          res.write(data);</span><br><span class="line">          res.end();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;).listen(8888);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文讨论第五个部分，即浏览器对内容的渲染，这一部分（渲染树构建、布局及绘制），又可以分为下面五个步骤：</p>
+<ul>
+<li>*处理 HTML 标记并构建 DOM 树。</li>
+<li>处理 CSS 标记并构建 CSSOM 树。</li>
+<li>将 DOM 与 CSSOM 合并成一个渲染树。</li>
+<li>根据渲染树来布局，以计算每个节点的几何信息。</li>
+<li>将各个节点绘制到屏幕上。<br>需要明白，这五个步骤并不一定一次性顺序完成。如果 DOM 或 CSSOM 被修改，以上过程需要重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。实际页面中，CSS 与 JavaScript 往往会多次修改 DOM 和 CSSOM，下面就来看看它们的影响方式。</li>
+</ul>
+<p>同时，由于下面两点：</p>
+<ul>
+<li>默认情况下，CSS 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直至 CSSOM 构建完毕。</li>
+<li><p>JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CSSOM 属性。<br>存在阻塞的 CSS 资源时，浏览器会延迟 JavaScript 的执行和 DOM 构建。另外：</p>
+</li>
+<li><p>当浏览器遇到一个 script 标记时，DOM 构建将暂停，直至脚本完成执行。</p>
+</li>
+<li>JavaScript 可以查询和修改 DOM 与 CSSOM。</li>
+<li><p>CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。<br>所以，script 标签的位置很重要。实际使用时，可以遵循下面两个原则：</p>
+</li>
+<li><p>CSS 优先：引入顺序上，CSS 资源先于 JavaScript 资源。</p>
+</li>
+<li>JavaScript 应尽量少影响 DOM 的构建。<br>浏览器的发展日益加快（目前的 Chrome 官方稳定版是 61），具体的渲染策略会不断进化，但了解这些原理后，就能想通它进化的逻辑。下面来看看 CSS 与 JavaScript 具体会怎样阻塞资源。<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; p &#123; color: red; &#125;&lt;/style&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样的 link 标签（无论是否 inline）会被视为阻塞渲染的资源，浏览器会优先处理这些 CSS 资源，直至 CSSOM 构建完毕。</p>
+<p>渲染树（Render-Tree）的关键渲染路径中，要求同时具有 DOM 和 CSSOM，之后才会构建渲染树。即，HTML 和 CSS 都是阻塞渲染的资源。HTML 显然是必需的，因为包括我们希望显示的文本在内的内容，都在 DOM 中存放，那么可以从 CSS 上想办法。</p>
+<p>最容易想到的当然是精简 CSS 并尽快提供它。除此之外，还可以用媒体类型（media type）和媒体查询（media query）来解除对渲染的阻塞。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;index.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">&lt;link href=&quot;print.css&quot; rel=&quot;stylesheet&quot; media=&quot;print&quot;&gt;</span><br><span class="line">&lt;link href=&quot;other.css&quot; rel=&quot;stylesheet&quot; media=&quot;(min-width: 30em) and (orientation: landscape)&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第一个资源会加载并阻塞。<br>第二个资源设置了媒体类型，会加载但不会阻塞，print 声明只在打印网页时使用。<br>第三个资源提供了媒体查询，会在符合条件时阻塞渲染。</p>
+<h2 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h2><p>JavaScript 的情况比 CSS 要更复杂一些。观察下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Do not go gentle into that good night,&lt;/p&gt;</span><br><span class="line">&lt;script&gt;console.log(&quot;inline&quot;)&lt;/script&gt;</span><br><span class="line">&lt;p&gt;Old age should burn and rave at close of day;&lt;/p&gt;</span><br><span class="line">&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;p&gt;Rage, rage against the dying of the light.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Do not go gentle into that good night,&lt;/p&gt;</span><br><span class="line">&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;p&gt;Old age should burn and rave at close of day;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;console.log(&quot;inline&quot;)&lt;/script&gt;</span><br><span class="line">&lt;p&gt;Rage, rage against the dying of the light.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样的 script 标签会阻塞 HTML 解析，无论是不是 inline-script。上面的 P 标签会从上到下解析，这个过程会被两段 JavaScript 分别打断一次（加载并且执行的时间段内）。</p>
+<p>所以实际工程中，我们常常将资源放到文档底部。</p>
+<h2 id="改变阻塞模式：defer-与-async"><a href="#改变阻塞模式：defer-与-async" class="headerlink" title="改变阻塞模式：defer 与 async"></a>改变阻塞模式：defer 与 async</h2><p>为什么要将 script 加载的 defer 与 async 方式放到后面呢？因为这两种方式是的出现，全是由于前面讲的那些阻塞条件的存在。换句话说，defer 与 async 方式可以改变之前的那些阻塞情形。</p>
+<p>首先，注意 async 与 defer 属性对于 inline-script 都是无效的，所以下面这个示例中三个 script 标签的代码会从上到下依次执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 按照从上到下的顺序输出 1 2 3 --&gt;</span><br><span class="line">&lt;script async&gt;</span><br><span class="line">  console.log(&quot;1&quot;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script defer&gt;</span><br><span class="line">  console.log(&quot;2&quot;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  console.log(&quot;3&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>故，下面两节讨论的内容都是针对设置了 src 属性的 script 标签。</p>
+<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;app1.js&quot; defer&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;app2.js&quot; defer&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;app3.js&quot; defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>defer 属性表示延迟执行引入的 JavaScript，即这段 JavaScript 加载时 HTML 并未停止解析，这两个过程是并行的。整个 document 解析完毕且 defer-script 也加载完成之后（这两件事情的顺序无关），会执行所有由 defer-script 加载的 JavaScript 代码，然后触发 DOMContentLoaded 事件。</p>
+<p>defer 不会改变 script 中代码的执行顺序，示例代码会按照 1、2、3 的顺序执行。所以，defer 与相比普通 script，有两点区别：载入 JavaScript 文件时不阻塞 HTML 的解析，执行阶段被放到 HTML 标签解析完成之后。</p>
+<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;app.js&quot; async&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;ad.js&quot; async&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;statistics.js&quot; async&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>async 属性表示异步执行引入的 JavaScript，与 defer 的区别在于，如果已经加载好，就会开始执行——无论此刻是 HTML 解析阶段还是 DOMContentLoaded 触发之后。需要注意的是，这种方式加载的 JavaScript 依然会阻塞 load 事件。换句话说，async-script 可能在 DOMContentLoaded 触发之前或之后执行，但一定在 load 触发之前执行。</p>
+<p>从上一段也能推出，多个 async-script 的执行顺序是不确定的。值得注意的是，向 document 动态添加 script 标签时，async 属性默认是 true，下一节会继续这个话题。</p>
+<h2 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement"></a>document.createElement</h2><p>使用 document.createElement 创建的 script 默认是异步的，示例如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(document.createElement(&quot;script&quot;).async); // true</span><br></pre></td></tr></table></figure></p>
+<p>所以，通过动态添加 script 标签引入 JavaScript 文件默认是不会阻塞页面的。如果想同步执行，需要将 async 属性人为设置为 false。</p>
+<p>如果使用 document.createElement 创建 link 标签会怎样呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const style = document.createElement(&quot;link&quot;);</span><br><span class="line">style.rel = &quot;stylesheet&quot;;</span><br><span class="line">style.href = &quot;index.css&quot;;</span><br><span class="line">document.head.appendChild(style); // 阻塞？</span><br></pre></td></tr></table></figure></p>
+<p>其实这只能通过试验确定，已知的是，Chrome 中已经不会阻塞渲染，Firefox、IE 在以前是阻塞的，现在会怎样我没有试验。</p>
+<h2 id="document-write-与-innerHTML"><a href="#document-write-与-innerHTML" class="headerlink" title="document.write 与 innerHTML"></a>document.write 与 innerHTML</h2><p>通过 document.write 添加的 link 或 script 标签都相当于添加在 document 中的标签，因为它操作的是 document stream（所以对于 loaded 状态的页面使用 document.write 会自动调用 document.open，这会覆盖原有文档内容）。即正常情况下， link 会阻塞渲染，script 会同步执行。不过这是不推荐的方式，Chrome 已经会显示警告，提示未来有可能禁止这样引入。如果给这种方式引入的 script 添加 async 属性，Chrome 会检查是否同源，对于非同源的 async-script 是不允许这么引入的。</p>
+<p>如果使用 innerHTML 引入 script 标签，其中的 JavaScript 不会执行。当然，可以通过 eval() 来手工处理，不过不推荐。如果引入 link 标签，我试验过在 Chrome 中是可以起作用的。另外，outerHTML、insertAdjacentHTML() 应该也是相同的行为，我并没有试验。这三者应该用于文本的操作，即只使用它们添加 text 或普通 HTML Element。</p>
 
           
         
@@ -1510,152 +1700,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/react-ref/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="panzhiying">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PAN's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/15/react-ref/" itemprop="url">react-forward-ref</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T17:24:14+08:00">
-                2018-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React/" itemprop="url" rel="index">
-                    <span itemprop="name">React</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Forwarding-Ref"><a href="#Forwarding-Ref" class="headerlink" title="Forwarding Ref"></a>Forwarding Ref</h2><p>Ref Forwarding可以将ref作为一个属性传递给组件的children。也就是父组件可以获取子组件的ref实例
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/15/react-ref/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1706,7 +1750,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
