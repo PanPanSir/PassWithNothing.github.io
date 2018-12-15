@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="一般来讲，当父元素的点击事件被执行时，其包含的子元素上绑定的点击事件不会被触发（当然前提是事件源是发上在父元素上但不在子元素上）举个例子：1234567891011121314151617&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;    &amp;lt;input id=&amp;quot;input1&amp;quot; style=&amp;quot;display: non">
+<meta name="description" content="一次在将Date类型转时间戳的实践中发现123const date = new Date();date.toString(); // &amp;quot;Sat Dec 15 2018 13:26:36 GMT+0800 (中国标准时间)&amp;quot;date.valueOf(); // 1544851596614 咦，是得拾起toString与valueOf的区别这一基础知识了。先上官方文档： value">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="label与input事件捕获">
-<meta property="og:url" content="http://yoursite.com/2018/08/03/label与input事件捕获/index.html">
+<meta property="og:title" content="ValueOfAndToString">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/ValueOfAndToString/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="一般来讲，当父元素的点击事件被执行时，其包含的子元素上绑定的点击事件不会被触发（当然前提是事件源是发上在父元素上但不在子元素上）举个例子：1234567891011121314151617&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;    &amp;lt;input id=&amp;quot;input1&amp;quot; style=&amp;quot;display: non">
+<meta property="og:description" content="一次在将Date类型转时间戳的实践中发现123const date = new Date();date.toString(); // &amp;quot;Sat Dec 15 2018 13:26:36 GMT+0800 (中国标准时间)&amp;quot;date.valueOf(); // 1544851596614 咦，是得拾起toString与valueOf的区别这一基础知识了。先上官方文档： value">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-div.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-lable.png">
-<meta property="og:updated_time" content="2018-08-21T11:11:25.000Z">
+<meta property="og:updated_time" content="2018-12-15T05:53:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="label与input事件捕获">
-<meta name="twitter:description" content="一般来讲，当父元素的点击事件被执行时，其包含的子元素上绑定的点击事件不会被触发（当然前提是事件源是发上在父元素上但不在子元素上）举个例子：1234567891011121314151617&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;    &amp;lt;input id=&amp;quot;input1&amp;quot; style=&amp;quot;display: non">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-div.png">
+<meta name="twitter:title" content="ValueOfAndToString">
+<meta name="twitter:description" content="一次在将Date类型转时间戳的实践中发现123const date = new Date();date.toString(); // &amp;quot;Sat Dec 15 2018 13:26:36 GMT+0800 (中国标准时间)&amp;quot;date.valueOf(); // 1544851596614 咦，是得拾起toString与valueOf的区别这一基础知识了。先上官方文档： value">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/03/label与input事件捕获/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/15/ValueOfAndToString/"/>
 
 
 
 
 
-  <title>label与input事件捕获 | PAN's Blog</title>
+  <title>ValueOfAndToString | PAN's Blog</title>
   
 
 
@@ -236,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/label与input事件捕获/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/ValueOfAndToString/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -253,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">label与input事件捕获</h1>
+          <h1 class="post-title" itemprop="name headline">ValueOfAndToString</h1>
         
 
         <div class="post-meta">
@@ -265,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T11:03:05+08:00">
-                2018-08-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T13:24:36+08:00">
+                2018-12-15
               </time>
             
 
@@ -325,10 +322,26 @@
       
 
       
-        <p>一般来讲，当父元素的点击事件被执行时，其包含的子元素上绑定的点击事件不会被触发（当然前提是事件源是发上在父元素上但不在子元素上）<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;outer&quot;&gt;</span><br><span class="line">    &lt;input id=&quot;input1&quot; style=&quot;display: none&quot;/&gt;</span><br><span class="line">    &lt;span class=&quot;span1&quot; id=&quot;span1&quot;&gt;span1&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&apos;input1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;input1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  document.getElementById(&apos;span1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;span1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  var a = document.getElementById(&apos;outer&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;outer&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-div.png" alt="graph图"></p>
-<p>可以看出，当事件发生在父元素不包含子元素的区域时，仅父元素上的事件会被触发；当事件发生在子元素上时，子元素上绑定的事件会被触发，同事通过冒泡机制，父元素上绑定的同类事件也会被触发；<br>但有个特例，即label下包含input元素时:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;lable id=&quot;outer&quot;&gt;</span><br><span class="line">    &lt;input id=&quot;input1&quot; /&gt;</span><br><span class="line">    &lt;span class=&quot;span1&quot; id=&quot;span1&quot;&gt;span1&lt;/span&gt;</span><br><span class="line">  &lt;/lable&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&apos;input1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;input1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  document.getElementById(&apos;span1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;span1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  var a = document.getElementById(&apos;outer&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;outer&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-lable.png" alt="graph图"><br>可以看出，当事件发生在父元素label不包含子元素的区域时，父元素label上的事件会被触发,同时其包含的子元素input元素上的事件也会被触发；当事件发生在非input的子元素上时，子元素上绑定的事件会被触发，同事通过冒泡机制，父元素label上绑定的同类事件也会被触发，此时，由于label的特性，label下的事件源的兄弟元素input上的相应事件也会被触发，而且input上事件会再一次冒泡导致父元素上相应的绑定事件被二次触发，即：子元素(非input) =》label父元素 =》input元素(事件源元素的兄弟元素) =》 label父元素。<br>  另外，即使input元素是被设置了<code>display: none</code>了，但在label的强大作用下，上面的事件还是被触发了，牛！~</p>
+        <p>一次在将Date类型转时间戳的实践中发现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const date = new Date();</span><br><span class="line">date.toString(); // &quot;Sat Dec 15 2018 13:26:36 GMT+0800 (中国标准时间)&quot;</span><br><span class="line">date.valueOf(); // 1544851596614</span><br></pre></td></tr></table></figure></p>
+<p>咦，是得拾起toString与valueOf的区别这一基础知识了。先上官方文档：</p>
+<h2 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf"></a>valueOf</h2><blockquote>
+<p>JavaScript调用valueOf方法将对象转换为原始值。你很少需要自己调用valueOf方法；当遇到要预期的原始值的对象时，JavaScript会自动调用它。<br>默认情况下，valueOf方法由Object后面的每个对象继承。 <strong><em>每个内置的核心对象都会覆盖此方法以返回适当的值。如果对象没有原始值，则valueOf将返回对象本身。</em></strong><br>JavaScript的许多内置对象都重写了该函数，以实现更适合自身的功能需要。因此，不同类型对象的valueOf()方法的返回值和返回值类型均可能不同。</p>
+</blockquote>
+<blockquote>
+<p>核心对象的valueOf方法：</p>
+<ul>
+<li>Array：返回数组本身 </li>
+<li>Boolean：返回布尔值，即var bool = new Boolen(param); bool.valueOf() // !!param</li>
+<li>Date：存储的时间是从 1970 年 1 月 1 日午夜开始计的毫秒数 UTC。与date的原生的getTime()相同</li>
+<li>Function：返回函数本身</li>
+<li>Number：数字值</li>
+<li>Object：对象本身。这是默认情况。</li>
+<li>String：字符串值。与toString方法相同</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Math 和 Error 对象没有 valueOf 方法。</p>
+</blockquote>
 
       
     </div>
@@ -353,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/11/JavaScript数组处理/" rel="next" title="JavaScript数组处理">
-                <i class="fa fa-chevron-left"></i> JavaScript数组处理
+              <a href="/2018/12/09/JS性能探讨：往数组中添加项/" rel="next" title="JS性能探讨：往数组中添加项">
+                <i class="fa fa-chevron-left"></i> JS性能探讨：往数组中添加项
               </a>
             
           </div>
@@ -362,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/03/master区别/" rel="prev" title="master区别">
-                master区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -417,8 +426,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,6 +487,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#valueOf-NaN"><span class="nav-number">1.</span> <span class="nav-text">valueOf</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1289,10 +1289,12 @@ pre .javascript .function {
 .post-body text {
   text-indent: 1.5rem;
 }
+.post-body p {
+  text-indent: 1.5rem;
+}
 @media (min-width: 992px) {
   .posts-expand .post-body {
     text-align: left;
-    text-indent: 1.5rem;
   }
 }
 .posts-expand .post-body h2,
@@ -3005,4 +3007,10 @@ pre .javascript .function {
 }
 .open:after {
   content: "▲";
+}
+ul {
+  text-indent: 0rem;
+}
+pre {
+  text-indent: 0rem;
 }
