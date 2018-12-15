@@ -1289,12 +1289,10 @@ pre .javascript .function {
 .post-body text {
   text-indent: 1.5rem;
 }
-.post-body p {
-  text-indent: 1.5rem;
-}
 @media (min-width: 992px) {
   .posts-expand .post-body {
     text-align: left;
+    text-indent: 1.5rem;
   }
 }
 .posts-expand .post-body h2,
@@ -1830,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0db41d;
+  background: #ecff7d;
 }
 .links-of-blogroll {
   font-size: 13px;
