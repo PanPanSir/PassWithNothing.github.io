@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="git reset 与 git revert区别revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。">
+<meta name="description" content="参考链接：https://github.com/mqyqingfeng/Blog/issues/12123456789var module = &amp;#123;  x: 42,  getX: function() &amp;#123;    return this.x;  &amp;#125;&amp;#125;var boundGetX = unboundGetX.bind(module);console.log(boun">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git revert">
-<meta property="og:url" content="http://yoursite.com/2018/07/03/revert-git/index.html">
+<meta property="og:title" content="bind、call、apply">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/bind、call、apply/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="git reset 与 git revert区别revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。">
+<meta property="og:description" content="参考链接：https://github.com/mqyqingfeng/Blog/issues/12123456789var module = &amp;#123;  x: 42,  getX: function() &amp;#123;    return this.x;  &amp;#125;&amp;#125;var boundGetX = unboundGetX.bind(module);console.log(boun">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/lgh.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/git%20log.jpg">
-<meta property="og:updated_time" content="2018-07-04T06:43:25.000Z">
+<meta property="og:updated_time" content="2018-12-19T07:50:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git revert">
-<meta name="twitter:description" content="git reset 与 git revert区别revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/lgh.jpg">
+<meta name="twitter:title" content="bind、call、apply">
+<meta name="twitter:description" content="参考链接：https://github.com/mqyqingfeng/Blog/issues/12123456789var module = &amp;#123;  x: 42,  getX: function() &amp;#123;    return this.x;  &amp;#125;&amp;#125;var boundGetX = unboundGetX.bind(module);console.log(boun">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/03/revert-git/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/19/bind、call、apply/"/>
 
 
 
 
 
-  <title>git revert | PAN's Blog</title>
+  <title>bind、call、apply | PAN's Blog</title>
   
 
 
@@ -236,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/revert-git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/bind、call、apply/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -253,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git revert</h1>
+          <h1 class="post-title" itemprop="name headline">bind、call、apply</h1>
         
 
         <div class="post-meta">
@@ -265,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-03T17:33:38+08:00">
-                2018-07-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T10:34:55+08:00">
+                2018-12-19
               </time>
             
 
@@ -288,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -325,11 +322,8 @@
       
 
       
-        <h2 id="git-reset-与-git-revert区别"><a href="#git-reset-与-git-revert区别" class="headerlink" title="git reset 与 git revert区别"></a>git reset 与 git revert区别</h2><p>revert与reset的区别在于，revert是将xxx的commit的操作逆向执行一次，重新生成一个新的commit A。<a id="more"></a><br>例如，xxx是删除了一行代码：var result = null;而revert就是在相同的位置再加上一行代码：var result = null。而commit XXX并没有被删除！只是当前branch的HEAD指向新的commit A而已。这是与reset彻底删除commit XXX的根本区别。</p>
-<h2 id="查看git-log的graph图"><a href="#查看git-log的graph图" class="headerlink" title="查看git log的graph图"></a>查看git log的graph图</h2><p><code>git log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --</code> 每条线都是一个 branch（分支），每个点都是一次 commit（提交记录）。<br><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/lgh.jpg" alt="graph图"></p>
-<h2 id="git-revert-xxx-m-number"><a href="#git-revert-xxx-m-number" class="headerlink" title="git revert xxx -m {number}"></a>git revert xxx -m {number}</h2><p>graph图看起来很复杂，在revert时会很错乱。可以<code>git log</code>先看一下log的历史。例如想要回滚commit：f1f5ae9f12ad0fece470391935039500a45c0787。如图所示，f1f5ae9f12ad0fece470391935039500a45c0787是一个merge commit，其之前的两个commit是cfb04f280与35a018399。结合graph可以看得出cfb04f280是分支 feature/FECHI-8886-partner-plus-ci的HEAD commit，而35a018399是分支origin/hotfix/FECHI-8886-reactupgrade-revert的head commit。因此在还原时需要指定要还原哪个父commit？是cfb04f280还是35a018399，<code>-m</code>选项的作用就是如此，当还原的对象是一个merge commit时，指定还原的内容属于那个父commit生成的。<br><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/git%20log.jpg" alt="graph图"></p>
-<h2 id="git-revert-HEAD-3"><a href="#git-revert-HEAD-3" class="headerlink" title="git revert HEAD~3"></a>git revert HEAD~3</h2><p>还原HEAD分支的倒数第四次commit所生成的修改，并且本次还原操作会生成一个新的commit。</p>
-<h2 id="git-revert-n-master-5-master-2"><a href="#git-revert-n-master-5-master-2" class="headerlink" title="git revert -n master~5..master~2"></a>git revert -n master~5..master~2</h2><p>还原master分支上倒数第五次（包含第五次）到倒数第二次（包含第二次）的修改，但是不会生成一个新的commit（-n选项控制）。只修改working tree与index，还没有commit。<br>参考：<a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a></p>
+        <p>参考链接：<a href="https://github.com/mqyqingfeng/Blog/issues/12" target="_blank" rel="noopener">https://github.com/mqyqingfeng/Blog/issues/12</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var module = &#123;</span><br><span class="line">  x: 42,</span><br><span class="line">  getX: function() &#123;</span><br><span class="line">    return this.x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var boundGetX = unboundGetX.bind(module);</span><br><span class="line">console.log(boundGetX());</span><br><span class="line">// expected output: 42</span><br></pre></td></tr></table></figure></p>
+<p>bind会返回一个function，改function中this绑定到bind的第一个参数，其余参数交给return的function<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">if (!Function.prototype.bind) &#123;</span><br><span class="line">  Function.prototype.bind = function(oThis) &#123;</span><br><span class="line">    if (typeof this !== &apos;function&apos;) &#123; // this是bind的调用者，即unboundGetX</span><br><span class="line">      throw new TypeError(&apos;Function.prototype.bind - what is trying to be bound is not callable&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var aArgs   = Array.prototype.slice.call(arguments, 1),</span><br><span class="line">        // bind接收的第一个参数为fBound中this的指向，剩余参数为fBound的参数</span><br><span class="line">        fToBind = this, // 这个this是调用bind的this：unboundGetX</span><br><span class="line">        fNOP    = function() &#123;&#125;,</span><br><span class="line">        fBound  = function() &#123;</span><br><span class="line">          return fToBind.apply(this instanceof fNOP</span><br><span class="line">                 ? this // 这个this是调用fBound的调用者，即window/undefined</span><br><span class="line">                 : oThis, // bind的第一个参数</span><br><span class="line">                 aArgs.concat(Array.prototype.slice.call(arguments)));</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    // 修改返回函数的 prototype 为绑定函数的 prototype，实例就可以继承绑定函数的原型中的值</span><br><span class="line">    if (this.prototype) &#123;</span><br><span class="line">      // Function.prototype doesn&apos;t have a prototype property</span><br><span class="line">      fNOP.prototype = this.prototype;</span><br><span class="line">    &#125;</span><br><span class="line">    fBound.prototype = new fNOP();</span><br><span class="line"></span><br><span class="line">    return fBound;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -354,8 +348,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/30/create-react-app清除控制台日志/" rel="next" title="create-react-app清除控制台日志">
-                <i class="fa fa-chevron-left"></i> create-react-app清除控制台日志
+              <a href="/2018/12/15/事件循环机制/" rel="next" title="事件循环机制">
+                <i class="fa fa-chevron-left"></i> 事件循环机制
               </a>
             
           </div>
@@ -364,8 +358,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/11/JavaScript数组处理/" rel="prev" title="JavaScript数组处理">
-                JavaScript数组处理 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/21/好文收藏/" rel="prev" title="文章收藏">
+                文章收藏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -418,17 +412,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -479,22 +464,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert区别"><span class="nav-number">1.</span> <span class="nav-text">git reset 与 git revert区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看git-log的graph图"><span class="nav-number">2.</span> <span class="nav-text">查看git log的graph图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-xxx-m-number"><span class="nav-number">3.</span> <span class="nav-text">git revert xxx -m {number}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-HEAD-3"><span class="nav-number">4.</span> <span class="nav-text">git revert HEAD~3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-n-master-5-master-2"><span class="nav-number">5.</span> <span class="nav-text">git revert -n master~5..master~2</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

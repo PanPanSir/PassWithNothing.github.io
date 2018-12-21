@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="深入浅出JavaScript事件机制:https://zhuanlan.zhihu.com/p/26229293 Promise的队列与setTimeout的队列有何关联：https://www.zhihu.com/question/36972010 setImmediate.js：https://github.com/YuzuJS/setImmediate#macrotasks-and-micr">
 <meta name="keywords" content="Web前端开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PAN&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/React/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件循环机制">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/事件循环机制/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
+<meta property="og:description" content="深入浅出JavaScript事件机制:https://zhuanlan.zhihu.com/p/26229293 Promise的队列与setTimeout的队列有何关联：https://www.zhihu.com/question/36972010 setImmediate.js：https://github.com/YuzuJS/setImmediate#macrotasks-and-micr">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-15T07:32:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAN&#39;s Blog">
+<meta name="twitter:title" content="事件循环机制">
+<meta name="twitter:description" content="深入浅出JavaScript事件机制:https://zhuanlan.zhihu.com/p/26229293 Promise的队列与setTimeout的队列有何关联：https://www.zhihu.com/question/36972010 setImmediate.js：https://github.com/YuzuJS/setImmediate#macrotasks-and-micr">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/React/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/15/事件循环机制/"/>
 
 
 
 
 
-  <title>Category: React | PAN's Blog</title>
+  <title>事件循环机制 | PAN's Blog</title>
   
 
 
@@ -141,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,111 +219,147 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>React<small>Category</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/事件循环机制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="panzhiying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PAN's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/21/React-Context/" itemprop="url">
-              
-                <span itemprop="name">React-Context</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">事件循环机制</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-21T19:52:43+08:00"
-              content="2018-06-21" >
-          06-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T15:30:39+08:00">
+                2018-12-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/react-ref/" itemprop="url">
-              
-                <span itemprop="name">react-forward-ref</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T17:24:14+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/07/React-JSX/" itemprop="url">
-              
-                <span itemprop="name">React JSX</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-07T11:07:04+08:00"
-              content="2018-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>深入浅出JavaScript事件机制:<a href="https://zhuanlan.zhihu.com/p/26229293" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26229293</a></p>
+<p>Promise的队列与setTimeout的队列有何关联：<a href="https://www.zhihu.com/question/36972010" target="_blank" rel="noopener">https://www.zhihu.com/question/36972010</a></p>
+<p>setImmediate.js：<a href="https://github.com/YuzuJS/setImmediate#macrotasks-and-microtasks" target="_blank" rel="noopener">https://github.com/YuzuJS/setImmediate#macrotasks-and-microtasks</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/15/ValueOfAndToString/" rel="next" title="valueOf与ToString区别">
+                <i class="fa fa-chevron-left"></i> valueOf与ToString区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/19/bind、call、apply/" rel="prev" title="bind、call、apply">
+                bind、call、apply <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +367,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -539,6 +583,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
