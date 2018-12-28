@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Loaderwebpack官方文档由于webpack只支持JavaScript语言，Loader允许webpack运行其他非JavaScript类型的文件并将它们转换为合法的模块，以供应用使用并添加到打包后的依赖图中。">
+<meta name="description" content="函数柯里化与闭包密不可分，柯里化后的函数，参数的传递方式灵活了许多。可以在一次函数调用中将参数都传递，也可以分次调用，将参数分次传递给函数。123var add = (a, b) =&amp;gt; a + b;var curryAdd = curry(add);curryAdd(1)(2); // 等价于add(2, 1); Function.length分析ramda函数柯里化源码时发现，123mod">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack-Loader">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/Webpack-Loader/index.html">
+<meta property="og:title" content="函数柯里化">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/函数柯里化/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="Loaderwebpack官方文档由于webpack只支持JavaScript语言，Loader允许webpack运行其他非JavaScript类型的文件并将它们转换为合法的模块，以供应用使用并添加到打包后的依赖图中。">
+<meta property="og:description" content="函数柯里化与闭包密不可分，柯里化后的函数，参数的传递方式灵活了许多。可以在一次函数调用中将参数都传递，也可以分次调用，将参数分次传递给函数。123var add = (a, b) =&amp;gt; a + b;var curryAdd = curry(add);curryAdd(1)(2); // 等价于add(2, 1); Function.length分析ramda函数柯里化源码时发现，123mod">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-15T11:34:07.000Z">
+<meta property="og:updated_time" content="2018-12-28T06:28:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack-Loader">
-<meta name="twitter:description" content="Loaderwebpack官方文档由于webpack只支持JavaScript语言，Loader允许webpack运行其他非JavaScript类型的文件并将它们转换为合法的模块，以供应用使用并添加到打包后的依赖图中。">
+<meta name="twitter:title" content="函数柯里化">
+<meta name="twitter:description" content="函数柯里化与闭包密不可分，柯里化后的函数，参数的传递方式灵活了许多。可以在一次函数调用中将参数都传递，也可以分次调用，将参数分次传递给函数。123var add = (a, b) =&amp;gt; a + b;var curryAdd = curry(add);curryAdd(1)(2); // 等价于add(2, 1); Function.length分析ramda函数柯里化源码时发现，123mod">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/12/Webpack-Loader/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/28/函数柯里化/"/>
 
 
 
 
 
-  <title>Webpack-Loader | PAN's Blog</title>
+  <title>函数柯里化 | PAN's Blog</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/Webpack-Loader/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/函数柯里化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Webpack-Loader</h1>
+          <h1 class="post-title" itemprop="name headline">函数柯里化</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-12T16:31:19+08:00">
-                2018-06-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T14:17:42+08:00">
+                2018-12-28
               </time>
             
 
@@ -285,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">Webpack</span>
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
                   </a>
                 </span>
 
@@ -322,26 +322,13 @@
       
 
       
-        <h2 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h2><p><a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">webpack官方文档</a><br>由于webpack只支持JavaScript语言，Loader允许webpack运行其他非JavaScript类型的文件并将它们转换为合法的模块，以供应用使用并添加到打包后的依赖图中。<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: &apos;my-first-webpack.bundle.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.txt$/, use: &apos;raw-loader&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>在上面的配置中，定义一个rules属性，含有两个属性：test与use。这段配置信息的作用是：</p>
-<p>你好编译器，当你解析以‘.text’结尾的文件时，如果发现此类文件中含有require或者import语句，在将require或者import的文件添加到bundle之前使用<code>raw-loader</code>对其进行转换。</p>
-<h3 id="Loader使用方式"><a href="#Loader使用方式" class="headerlink" title="Loader使用方式"></a>Loader使用方式</h3><ul>
-<li><p>配置化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.export = &#123;</span><br><span class="line">  ...</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.css$/, use: &apos;css-loader&apos; &#125;,</span><br><span class="line">      &#123; test: /\.ts$/, use: &apos;ts-loader&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>内联</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Styles from &apos;style-loader!css-loader?modules!./styles.css&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>命令行输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --module-bind jade-loader --module-bind &apos;css=style-loader!css-loader&apos;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Loader特性"><a href="#Loader特性" class="headerlink" title="Loader特性"></a>Loader特性</h3><ul>
-<li>Loaders可以是链式的，每一个Loader的转换结果都将作用于最终的处理结果。Loaders链的执行是反向执行的，第一个Loaders的执行结果会传递给下一个Loaders。最终webpack会获得链中最后一个Loaders的JavaScript类型的执行结果</li>
-<li>Loaders可以<a href="https://juejin.im/post/5accd3aa6fb9a028dd4e91d3" target="_blank" rel="noopener">同步的或者是异步的</a><br>同步：Loader对应函数执行完成后返回结果<br>异步：通过开启异步转换，在callBack中返回转换结果</li>
-<li>Loaders在Node.js上执行并且可以完成任何操作</li>
-<li>Loaders可以接收query参数，以配置的方式进行参数的传递。</li>
-</ul>
+        <p>函数柯里化与闭包密不可分，柯里化后的函数，参数的传递方式灵活了许多。可以在一次函数调用中将参数都传递，也可以分次调用，将参数分次传递给函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var add = (a, b) =&gt; a + b;</span><br><span class="line">var curryAdd = curry(add);</span><br><span class="line">curryAdd(1)(2); // 等价于add(2, 1);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Function-length"><a href="#Function-length" class="headerlink" title="Function.length"></a>Function.length</h3><p>分析ramda函数柯里化源码时发现，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = _curry1(function curry(fn) &#123;</span><br><span class="line">  return curryN(fn.length, fn);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>fn.length这个API可以获取到函数函数的形参个数。</p>
+<blockquote>
+<p>length 是函数对象的一个属性值，指该函数有多少个必须要传入的参数，即形参的个数。<br>形参的数量不包括剩余参数个数，仅包括第一个具有默认值之前的参数个数。<br>与之对比的是，  arguments.length 是函数被调用时实际传参的个数。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">console.log(Function.length); /* 1 */</span><br><span class="line"></span><br><span class="line">console.log((function()        &#123;&#125;).length); /* 0 */</span><br><span class="line">console.log((function(a)       &#123;&#125;).length); /* 1 */</span><br><span class="line">console.log((function(a, b)    &#123;&#125;).length); /* 2 etc. */</span><br><span class="line"></span><br><span class="line">console.log((function(...args) &#123;&#125;).length);</span><br><span class="line">// 0, rest parameter is not counted</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log((function(a, b = 1, c) &#123;&#125;).length);</span><br><span class="line">// 1, 具有默认值的第一个参数之前的参数才计算为length</span><br><span class="line"></span><br><span class="line">console.log((function(a = 1, b, c) &#123;&#125;).length) // 0</span><br><span class="line">console.log((function(b, a = 1, c) &#123;&#125;).length) // 1</span><br><span class="line">console.log((function(b, c, a = 1) &#123;&#125;).length) // 2</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/11/Webpack-Entry&&Output/" rel="next" title="Webpack-Entry&&Output">
-                <i class="fa fa-chevron-left"></i> Webpack-Entry&&Output
+              <a href="/2018/12/21/好文收藏/" rel="next" title="文章收藏">
+                <i class="fa fa-chevron-left"></i> 文章收藏
               </a>
             
           </div>
@@ -376,8 +363,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/12/Webpack-Plugin/" rel="prev" title="Webpack-Plugin">
-                Webpack-Plugin <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/28/文件上传/" rel="prev" title="文件上传">
+                文件上传 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -501,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loader"><span class="nav-number">1.</span> <span class="nav-text">Loader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Loader使用方式"><span class="nav-number">1.1.</span> <span class="nav-text">Loader使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loader特性"><span class="nav-number">1.2.</span> <span class="nav-text">Loader特性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-length"><span class="nav-number">1.</span> <span class="nav-text">Function.length</span></a></li></ol></div>
             
 
           </div>
