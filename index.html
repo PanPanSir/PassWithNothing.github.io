@@ -230,6 +230,265 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/29/webpack-devtool/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="panzhiying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PAN's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/29/webpack-devtool/" itemprop="url">webpack-devtool</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-29T11:31:49+08:00">
+                2018-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>devtool 此选项控制是否生成，以及如何生成 source map
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/29/webpack-devtool/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/29/文件上传的FormData、File、ArrayBuffer、Blob类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="panzhiying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PAN's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/29/文件上传的FormData、File、ArrayBuffer、Blob类型/" itemprop="url">文件上传的FormData、File、ArrayBuffer、Blob类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-29T10:39:16+08:00">
+                2018-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文件上传功能实现"><a href="#文件上传功能实现" class="headerlink" title="文件上传功能实现"></a>文件上传功能实现</h2><p>在服务市场特惠专区模块涉及到文件上传的需求，不同于平常的文件读取后立即上传，该需求需要在读取文件后保存起来与表单上其他数据一起传给server。</p>
+<h2 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h2><h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>标准的文件上传元素：<input type="file">，通过设置属性multiple可实现多个文件的上传，并在onChange回调中可以获取到文件对象file列表：e.target.files，其数据结构为File（二进制），并不属于原生的JavaScript数据类型。</p>
+<p>注意，这里的File只是文件对象。其在MDN上的定义为：</p>
+<blockquote>
+<p>文件(File) 接口提供有关文件的信息，并允许网页中的 JavaScript 访问其内容。<br>通常情况下， File 对象是来自用户在一个   <input> 元素上选择文件后返回的 FileList对象,也可以是来自由拖放操作生成的 DataTransfer 对象，或者来自 HTMLCanvasElement 上的 mozGetAsFile() API。在Gecko中，特权代码可以创建代表任何本地文件的File对象，而无需用户交互（有关详细信息，请参阅注意事项。<br>File 对象是特殊类型的 Blob，且可以用在任意的 Blob 类型的 context 中。比如说， FileReader, URL.createObjectURL(), createImageBitmap(), 及 XMLHttpRequest.send() 都能处理 Blob  和 File。</p>
+</blockquote>
+<p>而文件内容的读取需要依赖浏览器提供的FileReader来完成。</p>
+<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>也就是说我们可以将<input>元素上选择文件后返回的File对象作为参数传递给FileReader，进行文件内容的异步读取，也就是将文件内容读取到内存中。</p>
+<p>FileReader提供了三个方法：FileReader.readAsArrayBuffer()、FileReader.readAsDataURL()、FileReader.readAsText()，接受Blob文件对象将所读取到的文件内容处理成原始二进制数据、URL格式的字符串、以及字符串。</p>
+<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><p>由于ArrayBuffer、File、Blob等特殊数据类型没法序列化成JSON类型数据，因此，可以选择使用FormData进行数据的存储，并以“multipart/form-data”类型编码，便可以通过http协议或者thrift轻松将数据传递给server了。</p>
+<p>其中，FormData对象数据增删改查必须通过FormData自带的append、delete、set、get方法进行。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">response-type: &apos;json&apos;,&lt;input type=&quot;file&quot; onChange=&#123;onChange&#125; /&gt;</span><br><span class="line"></span><br><span class="line">// 读取文件</span><br><span class="line">const onChange = e =&gt; &#123;</span><br><span class="line">  reader.onloadend = function () &#123;</span><br><span class="line">    dispatch(onUpload(reader.result));</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsArrayBuffer(file);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// action文件</span><br><span class="line">const formData = new FormData();</span><br><span class="line">formData.append(&apos;limitData&apos;, limitDatas.value); //reader.result，是ArrayBuffer</span><br><span class="line">request(url, &#123;</span><br><span class="line">	method: &apos;POST&apos;,</span><br><span class="line">	query: false,</span><br><span class="line">  response-type: &apos;json&apos;,</span><br><span class="line">  body: formData,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>需要注意response-type: ‘json’选项的添加，在xhr-request中对opt有一下处理:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 关于request的处理</span><br><span class="line">var defaultResponse = opt.json ? &apos;json&apos; : &apos;text&apos;</span><br><span class="line"> opt = assign(&#123; responseType: defaultResponse &#125;, opt) // 如果opt中没有设置responseType响应格式，则responseType根据requestType的json设置。</span><br><span class="line"> ...</span><br><span class="line"> // 关于response的处理</span><br><span class="line"> if (!err) &#123;</span><br><span class="line">  if (responseType === &apos;arraybuffer&apos;) &#123;</span><br><span class="line">    data = toArrayBuffer(data)</span><br><span class="line">  &#125; else if (responseType === &apos;json&apos;) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      data = JSON.parse(data.toString())</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">      err = e</span><br><span class="line">    &#125;</span><br><span class="line"> &#125; else &#123; // &apos;text&apos; response</span><br><span class="line">   data = data.toString()</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以，若response-type: ‘json’不设置的话，默认response-type就是text，接口返回的JSON就不会被顺利解析。error报错便是这样的”{“error”:{“code”:null,”message”:”这个商品已经有对应的热卖商品了，请勿重复添加”}}”。</p>
+<p>轮到httpHandlerEnhancer处理时，body为”{“error”:{“code”:null,”message”:”这个商品已经有对应的热卖商品了，请勿重复添加”}}”，err中便不会有正确的error信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (res.statusCode === 401) &#123;</span><br><span class="line">   err = new Error(&apos;登录信息失效，请刷新页面！&apos;);</span><br><span class="line"> &#125; else if (res.statusCode === 403) &#123;</span><br><span class="line">   err = new Error(&apos;没有权限&apos;);</span><br><span class="line"> &#125; else if (res.statusCode === 504) &#123;</span><br><span class="line">   err = new Error(&apos;请求超时，请稍后重试！&apos;);</span><br><span class="line"> &#125; else if (res.statusCode !== 200) &#123;</span><br><span class="line">  // body：&quot;&#123;&quot;error&quot;:&#123;&quot;code&quot;:null,&quot;message&quot;:&quot;这个商品已经有对应的热卖商品了，请勿重复添加&quot;&#125;&#125;&quot;， 但body.error为undefined</span><br><span class="line">   err = new Error((body &amp;&amp; body.error &amp;&amp; body.error.message) || `请求 $&#123;res.url&#125; 失败，请重试！`);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考资料：<br><a href="https://www.zhangxinxu.com/wordpress/2013/10/understand-domstring-document-formdata-blob-file-arraybuffer/" target="_blank" rel="noopener">理解DOMString Document FormData Blob File ArrayBuffer数据类型</a><br><a href="https://www.html5rocks.com/zh/tutorials/file/dndfiles/" target="_blank" rel="noopener">通过 File API 使用 JavaScript 读取文件</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/文件上传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -302,7 +561,7 @@
         
           
             <p>antd 图片内容校验<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">beforeUpload(file) &#123;</span><br><span class="line">  const reader = new FileReader();</span><br><span class="line">  reader.addEventListener(&apos;load&apos;, () =&gt; &#123;</span><br><span class="line">    const img = new Image();</span><br><span class="line">    img.src = reader.result;</span><br><span class="line">    img.onload = () =&gt; &#123;</span><br><span class="line">      // 图片的width与height就是像素px</span><br><span class="line">      if (restrictRule[0] !== img.width || restrictRule[1] !== img.height) &#123;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  reader.readAsDataURL(file);</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>antd excle文件读取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import XLSX from &apos;xlsx&apos;;</span><br><span class="line"></span><br><span class="line">getCityList = (file) =&gt; &#123;</span><br><span class="line">  const reader = new FileReader(file);</span><br><span class="line">  reader.onloadend = () =&gt; &#123;</span><br><span class="line">    const data = reader.result;</span><br><span class="line">    const workbook = XLSX.read(</span><br><span class="line">      data,</span><br><span class="line">      &#123;</span><br><span class="line">        type: &apos;binary&apos;,</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">    let result = [];</span><br><span class="line">    // 表格的表格范围，可用于判断表头是否数量是否正确</span><br><span class="line">    let fromTo = &apos;&apos;;</span><br><span class="line">    // 遍历每张表读取</span><br><span class="line">    for (const sheet in workbook.Sheets) &#123;</span><br><span class="line">      if (workbook.Sheets.hasOwnProperty(sheet)) &#123;</span><br><span class="line">        fromTo = workbook.Sheets[sheet][&apos;!ref&apos;];</span><br><span class="line">        result = result.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));</span><br><span class="line">        console.log(&apos;result&apos;, result);</span><br><span class="line">        break; // 如果只取第一张表，就取消注释这行</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsBinaryString(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>antd excle文件读取<br>参考：<a href="https://www.cnblogs.com/sunshq/p/6019867.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunshq/p/6019867.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import XLSX from &apos;xlsx&apos;;</span><br><span class="line"></span><br><span class="line">getCityList = (file) =&gt; &#123;</span><br><span class="line">  const reader = new FileReader(file);</span><br><span class="line">  reader.onloadend = () =&gt; &#123;</span><br><span class="line">    const data = reader.result;</span><br><span class="line">    const workbook = XLSX.read(</span><br><span class="line">      data,</span><br><span class="line">      &#123;</span><br><span class="line">        type: &apos;binary&apos;,</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">    let result = [];</span><br><span class="line">    // 表格的表格范围，可用于判断表头是否数量是否正确</span><br><span class="line">    let fromTo = &apos;&apos;;</span><br><span class="line">    // 遍历每张表读取</span><br><span class="line">    for (const sheet in workbook.Sheets) &#123;</span><br><span class="line">      if (workbook.Sheets.hasOwnProperty(sheet)) &#123;</span><br><span class="line">        fromTo = workbook.Sheets[sheet][&apos;!ref&apos;];</span><br><span class="line">        result = result.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));</span><br><span class="line">        console.log(&apos;result&apos;, result);</span><br><span class="line">        break; // 如果只取第一张表，就取消注释这行</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsBinaryString(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1377,296 +1636,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/master区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="panzhiying">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PAN's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/master区别/" itemprop="url">master区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T10:45:25+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>参考资料：<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF</a></p>
-<h2 id="origin-master"><a href="#origin-master" class="headerlink" title="origin master"></a>origin master</h2><p>origin 是远程仓库地址的别名，通过.git/config文件可以做具体设置。<br>origin master 则是远程仓库的分支master</p>
-<h2 id="origin-master-1"><a href="#origin-master-1" class="headerlink" title="origin/master"></a>origin/master</h2><p>origin/master 是远程仓库中master分支在本地仓库的一个副本。<br>当我们clone下一个远程Git仓库时，会自动将远程仓库命名为origin(即远程仓库地址的别名就是origin)，同时会创建一个远程master分支的副本origin/master到本地仓库，最后还会自动创建一个本地master分支。<br>例如，你在本地master分支上做了一些修改并Git commit了，但在这些修改push到远程master之前origin/master中不会出现这些新的commit。其次，若远程master出现新的commit了，但是只要你不与 origin 服务器连接，你的 origin/master 中也不会出现那些新的commit。</p>
-<h2 id="git-fetch-origin"><a href="#git-fetch-origin" class="headerlink" title="git fetch origin"></a>git fetch origin</h2><p>如果要同步你的工作，运行 git fetch origin 命令。 这个命令查找 “origin” 是哪一个服务器（在本例中，它是 git.ourcompany.com），从中抓取本地没有的数据，并且更新本地数据库，移动 origin/master 指针指向新的、更新后的位置。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/label与input事件捕获/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="panzhiying">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PAN's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/03/label与input事件捕获/" itemprop="url">label与input事件捕获</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T11:03:05+08:00">
-                2018-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一般来讲，当父元素的点击事件被执行时，其包含的子元素上绑定的点击事件不会被触发（当然前提是事件源是发上在父元素上但不在子元素上）<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;outer&quot;&gt;</span><br><span class="line">    &lt;input id=&quot;input1&quot; style=&quot;display: none&quot;/&gt;</span><br><span class="line">    &lt;span class=&quot;span1&quot; id=&quot;span1&quot;&gt;span1&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&apos;input1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;input1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  document.getElementById(&apos;span1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;span1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  var a = document.getElementById(&apos;outer&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;outer&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-div.png" alt="graph图"></p>
-<p>可以看出，当事件发生在父元素不包含子元素的区域时，仅父元素上的事件会被触发；当事件发生在子元素上时，子元素上绑定的事件会被触发，同事通过冒泡机制，父元素上绑定的同类事件也会被触发；<br>但有个特例，即label下包含input元素时:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;lable id=&quot;outer&quot;&gt;</span><br><span class="line">    &lt;input id=&quot;input1&quot; /&gt;</span><br><span class="line">    &lt;span class=&quot;span1&quot; id=&quot;span1&quot;&gt;span1&lt;/span&gt;</span><br><span class="line">  &lt;/lable&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&apos;input1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;input1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  document.getElementById(&apos;span1&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;span1&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  var a = document.getElementById(&apos;outer&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    console.log(&apos;outer&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/PassWithNothing/PassWithNothing.github.io/master/images/label-lable.png" alt="graph图"><br>可以看出，当事件发生在父元素label不包含子元素的区域时，父元素label上的事件会被触发,同时其包含的子元素input元素上的事件也会被触发；当事件发生在非input的子元素上时，子元素上绑定的事件会被触发，同事通过冒泡机制，父元素label上绑定的同类事件也会被触发，此时，由于label的特性，label下的事件源的兄弟元素input上的相应事件也会被触发，而且input上事件会再一次冒泡导致父元素上相应的绑定事件被二次触发，即：子元素(非input) =》label父元素 =》input元素(事件源元素的兄弟元素) =》 label父元素。<br>  另外，即使input元素是被设置了<code>display: none</code>了，但在label的强大作用下，上面的事件还是被触发了，牛！~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1717,7 +1686,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1767,7 +1736,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

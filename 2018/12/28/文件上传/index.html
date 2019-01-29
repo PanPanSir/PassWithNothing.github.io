@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="PAN&#39;s Blog">
 <meta property="og:description" content="antd 图片内容校验123456789101112131415beforeUpload(file) &amp;#123;  const reader = new FileReader();  reader.addEventListener(&amp;apos;load&amp;apos;, () =&amp;gt; &amp;#123;    const img = new Image();    img.src = reader.r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-28T12:05:00.000Z">
+<meta property="og:updated_time" content="2018-12-28T12:13:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件上传">
 <meta name="twitter:description" content="antd 图片内容校验123456789101112131415beforeUpload(file) &amp;#123;  const reader = new FileReader();  reader.addEventListener(&amp;apos;load&amp;apos;, () =&amp;gt; &amp;#123;    const img = new Image();    img.src = reader.r">
@@ -301,7 +301,7 @@
 
       
         <p>antd 图片内容校验<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">beforeUpload(file) &#123;</span><br><span class="line">  const reader = new FileReader();</span><br><span class="line">  reader.addEventListener(&apos;load&apos;, () =&gt; &#123;</span><br><span class="line">    const img = new Image();</span><br><span class="line">    img.src = reader.result;</span><br><span class="line">    img.onload = () =&gt; &#123;</span><br><span class="line">      // 图片的width与height就是像素px</span><br><span class="line">      if (restrictRule[0] !== img.width || restrictRule[1] !== img.height) &#123;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  reader.readAsDataURL(file);</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>antd excle文件读取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import XLSX from &apos;xlsx&apos;;</span><br><span class="line"></span><br><span class="line">getCityList = (file) =&gt; &#123;</span><br><span class="line">  const reader = new FileReader(file);</span><br><span class="line">  reader.onloadend = () =&gt; &#123;</span><br><span class="line">    const data = reader.result;</span><br><span class="line">    const workbook = XLSX.read(</span><br><span class="line">      data,</span><br><span class="line">      &#123;</span><br><span class="line">        type: &apos;binary&apos;,</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">    let result = [];</span><br><span class="line">    // 表格的表格范围，可用于判断表头是否数量是否正确</span><br><span class="line">    let fromTo = &apos;&apos;;</span><br><span class="line">    // 遍历每张表读取</span><br><span class="line">    for (const sheet in workbook.Sheets) &#123;</span><br><span class="line">      if (workbook.Sheets.hasOwnProperty(sheet)) &#123;</span><br><span class="line">        fromTo = workbook.Sheets[sheet][&apos;!ref&apos;];</span><br><span class="line">        result = result.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));</span><br><span class="line">        console.log(&apos;result&apos;, result);</span><br><span class="line">        break; // 如果只取第一张表，就取消注释这行</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsBinaryString(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>antd excle文件读取<br>参考：<a href="https://www.cnblogs.com/sunshq/p/6019867.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunshq/p/6019867.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import XLSX from &apos;xlsx&apos;;</span><br><span class="line"></span><br><span class="line">getCityList = (file) =&gt; &#123;</span><br><span class="line">  const reader = new FileReader(file);</span><br><span class="line">  reader.onloadend = () =&gt; &#123;</span><br><span class="line">    const data = reader.result;</span><br><span class="line">    const workbook = XLSX.read(</span><br><span class="line">      data,</span><br><span class="line">      &#123;</span><br><span class="line">        type: &apos;binary&apos;,</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">    let result = [];</span><br><span class="line">    // 表格的表格范围，可用于判断表头是否数量是否正确</span><br><span class="line">    let fromTo = &apos;&apos;;</span><br><span class="line">    // 遍历每张表读取</span><br><span class="line">    for (const sheet in workbook.Sheets) &#123;</span><br><span class="line">      if (workbook.Sheets.hasOwnProperty(sheet)) &#123;</span><br><span class="line">        fromTo = workbook.Sheets[sheet][&apos;!ref&apos;];</span><br><span class="line">        result = result.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));</span><br><span class="line">        console.log(&apos;result&apos;, result);</span><br><span class="line">        break; // 如果只取第一张表，就取消注释这行</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsBinaryString(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -335,6 +335,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/29/文件上传的FormData、File、ArrayBuffer、Blob类型/" rel="prev" title="文件上传的FormData、File、ArrayBuffer、Blob类型">
+                文件上传的FormData、File、ArrayBuffer、Blob类型 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -402,7 +406,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -452,7 +456,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

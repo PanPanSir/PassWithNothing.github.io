@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考文献：http://www.css88.com/doc/webpack2/guides/get-started/webpack官方文档 Webpack故障处理你的webpack命令加--display-error-details选项http://zhaoda.net/webpack-handbook/troubleshooting.html">
+<meta name="description" content="devtool 此选项控制是否生成，以及如何生成 source map">
 <meta name="keywords" content="Web前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack-1">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/Webpack-故障处理/index.html">
+<meta property="og:title" content="webpack-devtool">
+<meta property="og:url" content="http://yoursite.com/2018/12/29/webpack-devtool/index.html">
 <meta property="og:site_name" content="PAN&#39;s Blog">
-<meta property="og:description" content="参考文献：http://www.css88.com/doc/webpack2/guides/get-started/webpack官方文档 Webpack故障处理你的webpack命令加--display-error-details选项http://zhaoda.net/webpack-handbook/troubleshooting.html">
+<meta property="og:description" content="devtool 此选项控制是否生成，以及如何生成 source map">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-15T11:34:19.000Z">
+<meta property="og:updated_time" content="2018-12-29T06:50:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack-1">
-<meta name="twitter:description" content="参考文献：http://www.css88.com/doc/webpack2/guides/get-started/webpack官方文档 Webpack故障处理你的webpack命令加--display-error-details选项http://zhaoda.net/webpack-handbook/troubleshooting.html">
+<meta name="twitter:title" content="webpack-devtool">
+<meta name="twitter:description" content="devtool 此选项控制是否生成，以及如何生成 source map">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/19/Webpack-故障处理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/29/webpack-devtool/"/>
 
 
 
 
 
-  <title>Webpack-1 | PAN's Blog</title>
+  <title>webpack-devtool | PAN's Blog</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/Webpack-故障处理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/29/webpack-devtool/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="panzhiying">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Webpack-1</h1>
+          <h1 class="post-title" itemprop="name headline">webpack-devtool</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T10:44:39+08:00">
-                2018-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-29T11:31:49+08:00">
+                2018-12-29
               </time>
             
 
@@ -272,28 +272,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">Webpack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -322,11 +300,7 @@
       
 
       
-        <p>参考文献：<a href="http://www.css88.com/doc/webpack2/guides/get-started/" target="_blank" rel="noopener">http://www.css88.com/doc/webpack2/guides/get-started/</a><br><a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">webpack官方文档</a></p>
-<h2 id="Webpack故障处理"><a href="#Webpack故障处理" class="headerlink" title="Webpack故障处理"></a>Webpack故障处理</h2><p>你的webpack命令加<code>--display-error-details</code>选项<br><a href="http://zhaoda.net/webpack-handbook/troubleshooting.html" target="_blank" rel="noopener">http://zhaoda.net/webpack-handbook/troubleshooting.html</a> <a id="more"></a></p>
-<h2 id="Webpack编译配置"><a href="#Webpack编译配置" class="headerlink" title="Webpack编译配置"></a>Webpack编译配置</h2><p>构建脚本时可以通过npm run build命令进行构建。</p>
-<p>在package.json文件中的script是设置脚本执行命令的shell，其中添加一个bulid的选项，其值为webpack，便可以运行位于<code>node_modules/.bin/</code>目录下的脚本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">script: &#123;</span><br><span class="line">  build: webpack, // node_modules/.bin/webpack</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>由于在script在执行之前会将地址<code>node_modules/.bin/</code>添加到环境变量PATH中，因此<code>npm run build</code>命令等价于<code>npm run build nodemodules/.bin/webpack</code></p>
+        <p>devtool 此选项控制是否生成，以及如何生成 source map <a id="more"></a></p>
 
       
     </div>
@@ -351,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/Webpack-css-module/" rel="next" title="CSS-Modules">
-                <i class="fa fa-chevron-left"></i> CSS-Modules
+              <a href="/2018/12/29/文件上传的FormData、File、ArrayBuffer、Blob类型/" rel="next" title="文件上传的FormData、File、ArrayBuffer、Blob类型">
+                <i class="fa fa-chevron-left"></i> 文件上传的FormData、File、ArrayBuffer、Blob类型
               </a>
             
           </div>
@@ -360,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/11/Webpack-Entry&&Output/" rel="prev" title="Webpack-Entry&&Output">
-                Webpack-Entry&&Output <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -415,17 +385,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -476,22 +437,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack故障处理"><span class="nav-number">1.</span> <span class="nav-text">Webpack故障处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack编译配置"><span class="nav-number">2.</span> <span class="nav-text">Webpack编译配置</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
